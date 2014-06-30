@@ -23,6 +23,7 @@ class AppAsset extends AssetBundle
     public $js = [
 		'js/jquery.unveil.min.js',
 		'js/masonry.pkgd.min.js',
+		'js/Chart.min.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
