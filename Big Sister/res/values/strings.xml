@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Big Sister</string>
+    <string name="fill_date">20/06/2014</string>
+    <string name="range">Range</string>
+    <string name="day">Day</string>
+</resources>
