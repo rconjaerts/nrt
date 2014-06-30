@@ -30,7 +30,7 @@ HW_DETECTION_CMD = "cat /proc/asound/cards"
 # by /proc/asound/cards
 SAMPLE_DURATION = 5 # seconds
 FORMAT = 'S16_LE'   # this is the format that my USB microphone generates
-THRESHOLD = 0.20
+THRESHOLD = 0.10
 RECORD_FILENAME='/tmp/noise.wav'
 LOG_FILE='/var/log/noise_detector.log'
 PID_FILE='/etc/noised/noised.pid'
