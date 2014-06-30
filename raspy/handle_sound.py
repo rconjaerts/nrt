@@ -16,7 +16,7 @@ url = 'http://192.168.137.1:8080/BigSisterReboot/webresources/entities.event'
 payload = {'timestamp': int(time.time()), 
           'value': value,
           'accountId': 1,
-          'type_id': 1,}
+          'typeId': 1,}
 headers = {'content-type': 'application/json'}
 
 r = requests.post(url, data=json.dumps(payload), headers=headers)

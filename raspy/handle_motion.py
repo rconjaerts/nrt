@@ -26,7 +26,7 @@ def handle_motion(img_path):
               'filename': img_path,
               'value': value,
               'accountId': 1,
-              'type_id': 2,}
+              'typeId': 2,}
     headers = {'content-type': 'application/json'}
 
     r = requests.post(url, data=json.dumps(payload), headers=headers)
