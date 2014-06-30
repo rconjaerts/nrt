@@ -22,11 +22,11 @@ def handle_motion(img_path):
     
     # see if we should do some shit with the baby
     try:
-        amplitude_value = float(open('/home/pi/nrt/raspy/last_amplitude').readline())
+        amplitude_value = float(open('/home/pi/last_amplitude').readline())
     except Error:
         amplitude_value = 0
         
-    if amplitude_value > 0.20 && motion_value > 0.20:
+    if amplitude_value > 0.20 & motion_value > 0.20:
         print "BABY IS AWAKE."
 
     # Send the event to our server

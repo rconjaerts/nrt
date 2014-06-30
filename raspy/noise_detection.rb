@@ -24,7 +24,7 @@ require 'logger'
 require 'date'
 
 HANDLER_SCRIPT = '/home/pi/nrt/raspy/handle_sound.py'
-AMPLITUDE_FILE = '/home/pi/nrt/raspy/last_amplitude'
+AMPLITUDE_FILE = '/home/pi/last_amplitude'
 
 HW_DETECTION_CMD = "cat /proc/asound/cards"
 # You need to replace MICROPHONE with the name of your microphone, as reported
