@@ -185,31 +185,6 @@
         ]
     },
     {
-        "name": "yiisoft/jquery",
-        "version": "2.1.0",
-        "version_normalized": "2.1.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/yiisoft/jquery.git",
-            "reference": "a585ca4d6a2a129897a95575d229496a3486390b"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/yiisoft/jquery/zipball/a585ca4d6a2a129897a95575d229496a3486390b",
-            "reference": "a585ca4d6a2a129897a95575d229496a3486390b",
-            "shasum": ""
-        },
-        "time": "2014-01-24 06:00:08",
-        "type": "library",
-        "installation-source": "dist",
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "description": "jQuery JavaScript Library",
-        "homepage": "http://jquery.com"
-    },
-    {
         "name": "yiisoft/jquery-pjax",
         "version": "v2.0.0",
         "version_normalized": "2.0.0.0",
@@ -542,59 +517,6 @@
         ]
     },
     {
-        "name": "swiftmailer/swiftmailer",
-        "version": "v5.1.0",
-        "version_normalized": "5.1.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/swiftmailer/swiftmailer.git",
-            "reference": "748c01c1144713ac0118396935d10b6ceec91b68"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/748c01c1144713ac0118396935d10b6ceec91b68",
-            "reference": "748c01c1144713ac0118396935d10b6ceec91b68",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.2.4"
-        },
-        "time": "2014-03-18 09:03:27",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "5.1-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "files": [
-                "lib/swift_required.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com",
-                "homepage": "http://fabien.potencier.org",
-                "role": "Lead Developer"
-            },
-            {
-                "name": "Chris Corbyn"
-            }
-        ],
-        "description": "Swiftmailer, free feature-rich PHP mailer",
-        "homepage": "http://swiftmailer.org",
-        "keywords": [
-            "mail",
-            "mailer"
-        ]
-    },
-    {
         "name": "yiisoft/yii2-swiftmailer",
         "version": "2.0.0-beta",
         "version_normalized": "2.0.0.0-beta",
@@ -643,70 +565,24 @@
         ]
     },
     {
-        "name": "semsol/arc2",
-        "version": "v2.2.4",
-        "version_normalized": "2.2.4.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/semsol/arc2.git",
-            "reference": "8a35ff12a6d44da26ada513016a451a2703557ec"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/semsol/arc2/zipball/8a35ff12a6d44da26ada513016a451a2703557ec",
-            "reference": "8a35ff12a6d44da26ada513016a451a2703557ec",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.0"
-        },
-        "time": "2013-12-12 15:02:21",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "classmap": [
-                "./",
-                "parsers/",
-                "serializers/"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "W3C"
-        ],
-        "authors": [
-            {
-                "name": "Benji Nowack",
-                "email": "mail@bnowack.de",
-                "homepage": "http://bnowack.de/"
-            }
-        ],
-        "description": "Semsol's ARC2 RDF library",
-        "homepage": "https://github.com/semsol/arc2",
-        "keywords": [
-            "RDF",
-            "sparql"
-        ]
-    },
-    {
         "name": "michelf/php-markdown",
-        "version": "1.4.0",
-        "version_normalized": "1.4.0.0",
+        "version": "1.4.1",
+        "version_normalized": "1.4.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/michelf/php-markdown.git",
-            "reference": "96d8150406f67e683ef4acc09fef91785fef1266"
+            "reference": "de9a19c7bf352d41cc99ed86c3c0ef17e87394b6"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/michelf/php-markdown/zipball/96d8150406f67e683ef4acc09fef91785fef1266",
-            "reference": "96d8150406f67e683ef4acc09fef91785fef1266",
+            "url": "https://api.github.com/repos/michelf/php-markdown/zipball/de9a19c7bf352d41cc99ed86c3c0ef17e87394b6",
+            "reference": "de9a19c7bf352d41cc99ed86c3c0ef17e87394b6",
             "shasum": ""
         },
         "require": {
             "php": ">=5.3.0"
         },
-        "time": "2013-11-29 17:09:24",
+        "time": "2014-05-05 02:43:50",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -742,94 +618,62 @@
         ]
     },
     {
-        "name": "willdurand/geocoder",
-        "version": "2.4.2",
-        "version_normalized": "2.4.2.0",
+        "name": "yiisoft/jquery",
+        "version": "2.1.1",
+        "version_normalized": "2.1.1.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/geocoder-php/Geocoder.git",
-            "reference": "258e2f5c84a9cea03096f6f11ecdc0293fbc7b93"
+            "url": "https://github.com/yiisoft/jquery.git",
+            "reference": "bc09bbbc8b40cf89812036188b6f94ae7627c73c"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/geocoder-php/Geocoder/zipball/258e2f5c84a9cea03096f6f11ecdc0293fbc7b93",
-            "reference": "258e2f5c84a9cea03096f6f11ecdc0293fbc7b93",
+            "url": "https://api.github.com/repos/yiisoft/jquery/zipball/bc09bbbc8b40cf89812036188b6f94ae7627c73c",
+            "reference": "bc09bbbc8b40cf89812036188b6f94ae7627c73c",
             "shasum": ""
         },
-        "require": {
-            "php": ">=5.3.0"
-        },
-        "require-dev": {
-            "geoip/geoip": "~1.13",
-            "guzzle/guzzle": "@stable",
-            "kriswallsmith/buzz": "@stable",
-            "zendframework/zend-http": "~2.1"
-        },
-        "suggest": {
-            "ext-curl": "Enabling the curl extension allows you to use the CurlHttpAdapter.",
-            "ext-geoip": "Enabling the geoip extension allows you to use the MaxMindProvider.",
-            "geoip/geoip": "If you are going to use the MaxMindBinaryProvider (conflict with geoip extension).",
-            "guzzle/guzzle": "Enabling Guzzle allows you to use the GuzzleHttpAdapter.",
-            "kriswallsmith/buzz": "Enabling Buzz allows you to use the BuzzHttpAdapter.",
-            "zendframework/zend-http": "Enabling Zend Http allows you to use the ZendHttpAdapter."
-        },
-        "time": "2014-01-05 01:57:42",
+        "time": "2014-05-07 05:00:09",
         "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.4-dev"
-            }
-        },
         "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Geocoder": "src/"
-            }
-        },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
             "MIT"
         ],
-        "authors": [
-            {
-                "name": "William Durand",
-                "email": "william.durand1@gmail.com",
-                "homepage": "http://www.willdurand.fr"
-            }
-        ],
-        "description": "The almost missing Geocoder PHP 5.3 library.",
-        "homepage": "http://geocoder-php.org",
-        "keywords": [
-            "abstraction",
-            "geocoder",
-            "geocoding",
-            "geoip"
-        ]
+        "description": "jQuery JavaScript Library",
+        "homepage": "http://jquery.com"
     },
     {
-        "name": "abraham/twitteroauth",
-        "version": "dev-add-composer-json",
-        "version_normalized": "dev-add-composer-json",
+        "name": "swiftmailer/swiftmailer",
+        "version": "v5.2.1",
+        "version_normalized": "5.2.1.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/tomohikosato/twitteroauth.git",
-            "reference": "cc2449455b91890ee48eff68c3d5270530e64ed8"
+            "url": "https://github.com/swiftmailer/swiftmailer.git",
+            "reference": "2b9af56cc676c338d52fca4c657e5bdff73bb7af"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/tomohikosato/twitteroauth/zipball/cc2449455b91890ee48eff68c3d5270530e64ed8",
-            "reference": "cc2449455b91890ee48eff68c3d5270530e64ed8",
+            "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/2b9af56cc676c338d52fca4c657e5bdff73bb7af",
+            "reference": "2b9af56cc676c338d52fca4c657e5bdff73bb7af",
             "shasum": ""
         },
         "require": {
-            "php": ">=5.3.2"
+            "php": ">=5.2.4"
         },
-        "time": "2012-11-19 02:41:52",
-        "type": "package",
-        "installation-source": "source",
+        "require-dev": {
+            "mockery/mockery": "~0.9.1"
+        },
+        "time": "2014-06-13 11:44:54",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.2-dev"
+            }
+        },
+        "installation-source": "dist",
         "autoload": {
             "files": [
-                "twitteroauth/twitteroauth.php"
+                "lib/swift_required.php"
             ]
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -838,16 +682,142 @@
         ],
         "authors": [
             {
-                "name": "Abraham Williams",
-                "email": "abraham@abrah.am",
-                "homepage": "http://abrah.am",
-                "role": "Developer"
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com",
+                "homepage": "http://fabien.potencier.org",
+                "role": "Lead Developer"
+            },
+            {
+                "name": "Chris Corbyn"
             }
         ],
-        "description": "Twitter oauth",
+        "description": "Swiftmailer, free feature-rich PHP mailer",
+        "homepage": "http://swiftmailer.org",
         "keywords": [
-            "Twitter API",
-            "Twitter oAuth"
+            "mail",
+            "mailer"
+        ]
+    },
+    {
+        "name": "guzzlehttp/streams",
+        "version": "1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/guzzle/streams.git",
+            "reference": "cf0c8c33ca95cc147efba4c714f630ee44767180"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/guzzle/streams/zipball/cf0c8c33ca95cc147efba4c714f630ee44767180",
+            "reference": "cf0c8c33ca95cc147efba4c714f630ee44767180",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0"
+        },
+        "time": "2014-04-03 04:48:24",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "GuzzleHttp\\Stream\\": "src/"
+            },
+            "files": [
+                "src/functions.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Michael Dowling",
+                "email": "mtdowling@gmail.com",
+                "homepage": "https://github.com/mtdowling"
+            }
+        ],
+        "description": "Provides a simple abstraction over streams of data (Guzzle 4+)",
+        "homepage": "http://guzzlephp.org/",
+        "keywords": [
+            "Guzzle",
+            "stream"
+        ]
+    },
+    {
+        "name": "guzzlehttp/guzzle",
+        "version": "4.1.2",
+        "version_normalized": "4.1.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/guzzle/guzzle.git",
+            "reference": "095cf4db559bebc78d967890eb93280d8ceb5a08"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/guzzle/guzzle/zipball/095cf4db559bebc78d967890eb93280d8ceb5a08",
+            "reference": "095cf4db559bebc78d967890eb93280d8ceb5a08",
+            "shasum": ""
+        },
+        "require": {
+            "ext-json": "*",
+            "guzzlehttp/streams": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "ext-curl": "*",
+            "phpunit/phpunit": "~4.0",
+            "psr/log": "~1.0"
+        },
+        "suggest": {
+            "ext-curl": "Guzzle will use specific adapters if cURL is present"
+        },
+        "time": "2014-06-18 18:22:41",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "4.1.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "GuzzleHttp\\": "src/"
+            },
+            "files": [
+                "src/functions.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Michael Dowling",
+                "email": "mtdowling@gmail.com",
+                "homepage": "https://github.com/mtdowling"
+            }
+        ],
+        "description": "Guzzle is a PHP HTTP client library and framework for building RESTful web service clients",
+        "homepage": "http://guzzlephp.org/",
+        "keywords": [
+            "client",
+            "curl",
+            "framework",
+            "http",
+            "http client",
+            "rest",
+            "web service"
         ]
     }
 ]
