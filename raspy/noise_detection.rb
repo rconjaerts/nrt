@@ -24,6 +24,7 @@ require 'logger'
 require 'date'
 
 HANDLER_SCRIPT = '/home/pi/nrt/raspy/handle_sound.py'
+AMPLITUDE_FILE = '/home/pi/last_amplitude'
 
 HW_DETECTION_CMD = "cat /proc/asound/cards"
 # You need to replace MICROPHONE with the name of your microphone, as reported
@@ -34,6 +35,7 @@ THRESHOLD = 0.10
 RECORD_FILENAME='/tmp/noise.wav'
 LOG_FILE='/var/log/noise_detector.log'
 PID_FILE='/etc/noised/noised.pid'
+
 
 logger = Logger.new(LOG_FILE)
 logger.level = Logger::DEBUG
@@ -160,6 +162,7 @@ pid = fork do
     out = `/usr/bin/sox -t .wav #{RECORD_FILENAME} -n stat 2>&1`
     out.match(/Maximum amplitude:\s+(.*)/m)
     amplitude = $1.to_f
+    puts `echo #{amplitude} > #{AMPLITUDE_FILE}`
     if amplitude > THRESHOLD
       logger.debug("Detected amplitude: #{amplitude}") if options[:verbose]
       puts `#{HANDLER_SCRIPT} #{THRESHOLD} #{amplitude}`
