@@ -23,6 +23,7 @@ class SiteController extends Controller
     public function actionIndex($q = null)
     {
 		
+		/*
 		$client = new \GuzzleHttp\Client();
 		$res = $client->get('https://api.github.com/user', [
 		    'auth' =>  ['user', 'pass']
@@ -32,6 +33,7 @@ class SiteController extends Controller
 		echo $res->getBody();                 // {"type":"User"...'
 		var_export($res->json());             // Outputs the JSON decoded data
 	
+		*/
         return $this->render('index', [
 			]);
     }
