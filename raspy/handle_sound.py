@@ -9,7 +9,7 @@ import time
 threshold = float(sys.argv[1])
 amplitude = float(sys.argv[2])
 
-value = 100 * (amplitude - threshold) / threshold
+value = 100 * (amplitude - threshold) / (1-threshold)
 
 # Send the event to our server
 url = 'http://192.168.137.1:8080/BigSister/webresources/entities.eventaudio'
