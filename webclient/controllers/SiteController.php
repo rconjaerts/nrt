@@ -25,16 +25,17 @@ class SiteController extends Controller
 		
 		/*
 		$client = new \GuzzleHttp\Client();
-		$res = $client->get('https://api.github.com/user', [
-		    'auth' =>  ['user', 'pass']
+		$res = $client->get('http://localhost:8080/BigSisterReboot/webresources/entities.event', [
+		    'headers' => ['content-type' => 'application/json']
 		]);
 		echo $res->getStatusCode();           // 200
 		echo $res->getHeader('content-type'); // 'application/json; charset=utf8'
-		echo $res->getBody();                 // {"type":"User"...'
+		$data = $res->getBody();                 // {"type":"User"...'
 		var_export($res->json());             // Outputs the JSON decoded data
 	
 		*/
         return $this->render('index', [
+			'data' => $data
 			]);
     }
 	
