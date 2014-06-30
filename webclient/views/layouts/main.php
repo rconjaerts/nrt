@@ -21,15 +21,17 @@ AppAsset::register($this);
     <?php $this->head() ?>
 </head>
 <body>
+	
 
 <?php $this->beginBody() ?>
     <div class="wrap">
         <?php
             NavBar::begin([
-				'brandLabel' => '<img src="'.Yii::$app->homeUrl.'/img/brotherbear.png" alt="BrotherBear"/>',
+				'brandLabel' => '<img src="'.Yii::$app->homeUrl.'/../img/brotherbear.png" alt="BrotherBear" style="height: 30px; margin-top: -5px"/>',
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
-                    'class' => 'navbar-inverse navbar-fixed-top',
+                    'class' => 'navbar-default navbar-fixed-top',
+					'style' => 'height: 50px;'
                 ],
             ]);
             echo Nav::widget([
@@ -51,7 +53,10 @@ AppAsset::register($this);
             <?= $content ?>
         </div>
     </div>
-
+	<?php
+	echo Yii::$app->homeUrl;
+		
+	?>
     <footer class="footer">
         <div class="container">
             <p class="pull-left">&copy; BrotherBear | NRT <?= date('Y') ?></p>

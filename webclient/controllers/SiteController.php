@@ -23,6 +23,7 @@ class SiteController extends Controller
     public function actionIndex($q = null)
     {
 		
+		/*
 		$client = new \GuzzleHttp\Client();
 		$res = $client->get('http://localhost:8080/BigSisterReboot/webresources/entities.event', [
 		    'headers' => ['content-type' => 'application/json']
@@ -32,6 +33,7 @@ class SiteController extends Controller
 		$data = $res->getBody();                 // {"type":"User"...'
 		var_export($res->json());             // Outputs the JSON decoded data
 	
+		*/
         return $this->render('index', [
 			'data' => $data
 			]);
