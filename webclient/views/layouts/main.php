@@ -55,10 +55,7 @@ AppAsset::register($this);
             <?= $content ?>
         </div>
     </div>
-	<?php
-	echo Yii::$app->homeUrl;
-		
-	?>
+
     <footer class="footer">
         <div class="container">
             <p class="pull-left">&copy; BrotherBear | NRT <?= date('Y') ?></p>

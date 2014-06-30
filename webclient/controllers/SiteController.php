@@ -11,6 +11,12 @@ use yii\helpers\ArrayHelper;
 class SiteController extends Controller
 {
 
+	// Hardcoded user information 
+	// Should be removed when user authentication is in place (not for now)
+	private $accountId = 1;
+	private $audioType= 1;
+	private $videoType = 2;
+
     public function actions()
     {
         return [
@@ -61,26 +67,30 @@ class SiteController extends Controller
 	}
 	
 	public function actionVideo(){
-	
-		// Hardcoded user information 
-		// Should be removed when user authentication is in place (not for now)
-		$accountId = 1;
-		$videoType = 2;
 		
 		$today  = mktime(0, 0, 0, date("m")  , date("d"), date("Y"));
 		$todayShow = date("d/m/Y");
 		$now = time();
 		
 		$client = new \GuzzleHttp\Client();
-		$res = $client->get('http://localhost:8080/BigSisterReboot/webresources/entities.event/historydata/'.$accountId.'/'.$videoType.'/'.$today.'/'.$now, [
+		$res = $client->get('http://localhost:8080/BigSisterReboot/webresources/entities.event/historydata/'.$this->accountId.'/'.$this->videoType.'/'.$today.'/'.$now, [
 		    'headers' => ['content-type' => 'application/json']
 		]);
-		$data = $res->json();             // Outputs the JSON decoded data
+		$data = $res->json();
+		
+		$dataY = array();
+		$dataX = array();
+		$firstTimestamp = $data[0]["timestamp"];
+		foreach($data as $event)
+		{
+		   $dataY[] = $event["value"];
+		   $dataX[] = $event["timestamp"] - $firstTimestamp;
+		}
 
-	
         return $this->render('video', [
 			'todayShow' => $todayShow,       
-			'data' => $data
+			'dataY' => $dataY,
+			'dataX' => $dataX
 			]);
 	}
 	

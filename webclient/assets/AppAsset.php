@@ -8,6 +8,8 @@
 namespace app\assets;
 
 use yii\web\AssetBundle;
+use yii\web\View;
+
 
 /**
  * @author Qiang Xue <qiang.xue@gmail.com>
@@ -15,6 +17,11 @@ use yii\web\AssetBundle;
  */
 class AppAsset extends AssetBundle
 {
+    public function init() {
+    	$this->jsOptions['position'] = View::POS_HEAD;
+        parent::init();
+     }
+	   
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
