@@ -27,7 +27,8 @@ def handle_motion(img_path):
               'filename': img_path,
               'value': value,
               'accountId': 1,
-              'typeId': 2,}
+              'typeId': 2,
+          }
     headers = {'content-type': 'application/json'}
 
     r = requests.post(url, data=json.dumps(payload), headers=headers)
@@ -49,11 +50,13 @@ def handle_snapshot(img_path):
 
 
 # Our first arguement passed is an image file name
-img_path = sys.argv[1].strim()
+img_path = str(sys.argv[1]).strip()
 
 # motion pictures end with m.jpg, so here we differentiate between motion pics and snapshots
 if img_path[-5:] == 'm.jpg':
+    print 'motion'
     handle_motion(img_path)
 else:
+    print 'snapshot'
     handle_snapshot(img_path)
     
