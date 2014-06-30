@@ -9,6 +9,7 @@ import time
 
 
 def handle_motion(img_path):
+    print "handling motion"
     # We load it and calculate a single scalar value for the motion ('activity')
     # in this image
     img = np.asarray(Image.open(img_path).convert('L'))
@@ -48,7 +49,7 @@ def handle_snapshot(img_path):
 
 
 # Our first arguement passed is an image file name
-img_path = sys.argv[1]
+img_path = sys.argv[1].strim()
 
 # motion pictures end with m.jpg, so here we differentiate between motion pics and snapshots
 if img_path[-5:] == 'm.jpg':
