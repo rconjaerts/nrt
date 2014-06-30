@@ -7,7 +7,6 @@ import requests
 import json
 import time
 
-
 def handle_motion(img_path):
     print "handling motion"
     # We load it and calculate a single scalar value for the motion ('activity')
@@ -19,13 +18,22 @@ def handle_motion(img_path):
     motion_pixels = img.sum()
     total_pixels = m*n
 
-    value = motion_pixels / total_pixels * 100
+    motion_value = motion_pixels / total_pixels * 100
+    
+    # see if we should do some shit with the baby
+    try:
+        amplitude_value = float(open('/home/pi/nrt/raspy/last_amplitude').readline())
+    except Error:
+        amplitude_value = 0
+        
+    if amplitude_value > 0.20 && motion_value > 0.20:
+        print "BABY IS AWAKE."
 
     # Send the event to our server
     url = 'http://192.168.137.1:8080/BigSisterReboot/webresources/entities.event'
     payload = {'timestamp': int(time.time()), 
               'filename': img_path,
-              'value': value,
+              'value': motion_value,
               'accountId': 1,
               'typeId': 2,
           }
