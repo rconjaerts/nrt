@@ -36,7 +36,9 @@ AppAsset::register($this);
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => [
 //                    ['label' => 'Explore', 'url' => ['/site/index']],
+					['label' => 'Live', 'url' => ['/site/live']],
                     ['label' => 'About', 'url' => ['/site/about']],
+					
                 ],
             ]);
             NavBar::end();
@@ -52,7 +54,7 @@ AppAsset::register($this);
 
     <footer class="footer">
         <div class="container">
-            <p class="pull-left">&copy; Group 1 - Accommodations | Robrecht Conjaerts, Stijn De Pestel, Tom Jaspers, Mathieu Thys <?= date('Y') ?></p>
+            <p class="pull-left">&copy; BrotherBear | NRT <?= date('Y') ?></p>
             <p class="pull-right"><?= Yii::powered() ?></p>
         </div>
     </footer>
