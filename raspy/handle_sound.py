@@ -6,8 +6,8 @@ import json
 import time
 
 
-threshold = sys.argv[1]
-amplitude = sys.argv[2]
+threshold = float(sys.argv[1])
+amplitude = float(sys.argv[2])
 
 value = 100 * (amplitude - threshold) / threshold
 
