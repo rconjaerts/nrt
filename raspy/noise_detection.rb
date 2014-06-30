@@ -160,9 +160,8 @@ pid = fork do
     out = `/usr/bin/sox -t .wav #{RECORD_FILENAME} -n stat 2>&1`
     out.match(/Maximum amplitude:\s+(.*)/m)
     amplitude = $1.to_f
-    logger.debug("Detected amplitude: #{amplitude}") if options[:verbose]
     if amplitude > THRESHOLD
-      logger.info("Sound detected!!!")
+      logger.debug("Detected amplitude: #{amplitude}") if options[:verbose]
       if options[:verbose]
         puts 'Sound detected'
       end
