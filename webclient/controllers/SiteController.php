@@ -35,7 +35,7 @@ class SiteController extends Controller
 	
 		*/
         return $this->render('index', [
-			'data' => $data
+			//'data' => $data
 			]);
     }
 	
@@ -50,8 +50,37 @@ class SiteController extends Controller
         return $this->render('about', ['content' => $content]);
     }
 	
-	public function actionLive(){
-        return $this->render('live', [
+	public function actionVideolive(){
+        return $this->render('videolive', [
+			]);
+	}
+	
+	public function actionAudio(){
+        return $this->render('audio', [
+			]);
+	}
+	
+	public function actionVideo(){
+	
+		// Hardcoded user information 
+		// Should be removed when user authentication is in place (not for now)
+		$accountId = 1;
+		$videoType = 2;
+		
+		$today  = mktime(0, 0, 0, date("m")  , date("d"), date("Y"));
+		$todayShow = date("d/m/Y");
+		$now = time();
+		
+		$client = new \GuzzleHttp\Client();
+		$res = $client->get('http://localhost:8080/BigSisterReboot/webresources/entities.event/historydata/'.$accountId.'/'.$videoType.'/'.$today.'/'.$now, [
+		    'headers' => ['content-type' => 'application/json']
+		]);
+		$data = $res->json();             // Outputs the JSON decoded data
+
+	
+        return $this->render('video', [
+			'todayShow' => $todayShow,       
+			'data' => $data
 			]);
 	}
 	

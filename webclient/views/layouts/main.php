@@ -38,7 +38,9 @@ AppAsset::register($this);
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => [
 //                    ['label' => 'Explore', 'url' => ['/site/index']],
-					['label' => 'Live', 'url' => ['/site/live']],
+					['label' => 'Video Livestream', 'url' => ['/site/videolive']],
+					['label' => 'Video', 'url' => ['/site/video']],
+					['label' => 'Audio', 'url' => ['/site/audio']],
                     ['label' => 'About', 'url' => ['/site/about']],
 					
                 ],
