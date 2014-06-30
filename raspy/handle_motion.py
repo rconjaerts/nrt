@@ -32,7 +32,6 @@ def handle_motion(img_path):
     # Send the event to our server
     url = 'http://192.168.137.1:8080/BigSisterReboot/webresources/entities.event'
     payload = {'timestamp': int(time.time()), 
-              'filename': img_path,
               'value': motion_value,
               'accountId': 1,
               'typeId': 2,
