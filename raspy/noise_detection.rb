@@ -163,6 +163,9 @@ pid = fork do
     logger.debug("Detected amplitude: #{amplitude}") if options[:verbose]
     if amplitude > THRESHOLD
       logger.info("Sound detected!!!")
+      if options[:verbose]
+        puts 'Sound detected'
+      end
       puts `#{HANDLER_SCRIPT} #{THRESHOLD} #{amplitude}`
     else
       logger.debug("No sound detected...")
