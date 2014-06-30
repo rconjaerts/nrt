@@ -26,7 +26,7 @@ def handle_motion(img_path):
     except Error:
         amplitude_value = 0
         
-    if amplitude_value > 0.20 & motion_value > 0.20:
+    if amplitude_value > 0.20 and motion_value > 0.20:
         print "BABY IS AWAKE."
 
     # Send the event to our server
