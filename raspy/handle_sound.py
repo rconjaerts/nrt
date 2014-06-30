@@ -12,7 +12,7 @@ amplitude = float(sys.argv[2])
 value = 100 * (amplitude - threshold) / (1-threshold)
 
 # Send the event to our server
-url = 'http://192.168.137.1:8080/BigSister/webresources/entities.eventaudio'
+url = 'http://192.168.137.1:8080/BigSisterReboot/webresources/entities.event'
 payload = {'timestamp': int(time.time()), 
           'value': value,
           'accountId': 1,

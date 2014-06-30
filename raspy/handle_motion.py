@@ -21,7 +21,7 @@ def handle_motion(img_path):
     value = motion_pixels / total_pixels * 100
 
     # Send the event to our server
-    url = 'http://192.168.137.1:8080/BigSister/webresources/entities.eventvideo'
+    url = 'http://192.168.137.1:8080/BigSisterReboot/webresources/entities.event'
     payload = {'timestamp': int(time.time()), 
               'filename': img_path,
               'value': value,
