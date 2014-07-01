@@ -1,13 +1,40 @@
 BrotherBear
 ===========================================
 
-BRIEF
------
-The smart babymonitor that's looking out for your baby.
-
+	The smart babymonitor that's looking out for your baby
+	
+	
 TEAM
 ----
-- Niels Delestinne
-- Robrecht Conjaerts
-- Tom Jaspers
+- Niels Delestinne (KUL)
+
+- Robrecht Conjaerts (VUB, AI)
+
+- Tom Jaspers (VUB, AI)
+
+
+TECHNOLOGIES
+-------------
+- Raspberry Pi
+
+- Sony PS3 Eye (camera, microphone)
+
+- Python / Ruby scripts glued together
+
+- Java Jersey RESTful Web Service
+
+- Web app using Yii
+
+- Android 4.4
+
+
+FUTURE
+-------
+
+- Embed hardware in a teddy bear
+
+- Interaction between child <> BrotherBear
+
+- A lot of data => more complex analysis 
+
 

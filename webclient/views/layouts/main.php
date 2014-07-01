@@ -41,7 +41,7 @@ AppAsset::register($this);
                 'items' => [
 //                    ['label' => 'Explore', 'url' => ['/site/index']],
 					['label' => 'Video Livestream', 'url' => ['/site/videolive']],
-					['label' => 'Live Data', 'url' => ['/site/live']],
+					['label' => 'Live Data', 'url' => ['/graph/movement']],
 					['label' => 'Data analysis', 'url' => ['/site/data']],
                     ['label' => 'About', 'url' => ['/site/about']],
 					
@@ -61,7 +61,6 @@ AppAsset::register($this);
     <footer class="footer">
         <div class="container">
             <p class="pull-left">&copy; BrotherBear | NRT <?= date('Y') ?></p>
-            <p class="pull-right"><?= Yii::powered() ?></p>
         </div>
     </footer>
 
