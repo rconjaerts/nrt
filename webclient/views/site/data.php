@@ -8,10 +8,19 @@ use yii\widgets\ActiveForm;
 $this->title = 'Test';
 ?>
 <div class="site-index">	
-	<?php
-	print_r($sleepComfort);
-		
-	?>
+	<?php	
+	$movementAmount = $videoCount / count($videoY) * 100;
+	$movementValue = $videoValue / 30 * 100;
+	$noiseAmount = $audioCount / count($audioY) * 100;
+	$noiseValue = $audioValue / 30 * 100;
+	
+	$sleepQualityValue = (400 - $movementAmount - $movementValue - $noiseAmount - $noiseValue)/4;
+	$comfortScore = round($sleepQualityValue/10 + 0.5);
+	if($comfortScore==0){
+		$comfortScore = 1;
+	}
+	?>	
+	
 	<div class="jumbotron" style="padding-bottom: 0;">
 	  <h1>Overall sleeping quality for <?= $todayShow; ?></h1>
 	  <br>
@@ -35,19 +44,17 @@ $this->title = 'Test';
 		<h4>Good nights' rest</h4>
 		
 	<div class="progress">
-	  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-	    <span class="sr-only">40% Complete (success)</span>
+	  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?= $sleepQualityValue ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= $sleepQualityValue ?>%">
+	    <span class="sr-only"><?= $sleepQualityValue ?>% Complete (success)</span>
 	  </div>
 	</div>
 	<h4>Movement</h4>
-	<?php $movementValue = $videoValue / 30 * 100; ?>
 	<div class="progress">
 	  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="<?= $movementValue ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= $movementValue ?>%">
 	    <span class="sr-only"><?= $movementValue ?>% Complete</span>
 	  </div>
 	</div>
 	<h4>Noise</h4>
-	<?php $noiseValue = $audioValue / 30 * 100; ?>
 	<div class="progress">
 	  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<?= $noiseValue ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= $noiseValue ?>%">
 	    <span class="sr-only"><?= $noiseValue ?>% Complete (warning)</span>
