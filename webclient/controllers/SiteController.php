@@ -73,7 +73,8 @@ class SiteController extends Controller
 		$now = time();
 		
 		$client = new \GuzzleHttp\Client();
-		$res = $client->get('http://localhost:8080/BigSisterReboot/webresources/entities.event/historydata/'.$this->accountId.'/'.$this->videoType.'/'.$today.'/'.$now, [
+		$res = $client
+				->get('http://192.168.1.116:8080/BigSisterReboot/webresources/entities.event/historydata/'.$this->accountId.'/'.$this->videoType.'/'.$today.'/'.$now, [
 		    'headers' => ['content-type' => 'application/json']
 		]);
 		$data = $res->json();
@@ -84,7 +85,9 @@ class SiteController extends Controller
 		foreach($data as $event)
 		{
 		   $dataY[] = $event["value"];
-		   $dataX[] = $event["timestamp"] - $firstTimestamp;
+		   $timestamp = $event["timestamp"] - $firstTimestamp;
+		   $dataX[] = $timestamp;
+	
 		}
 
         return $this->render('video', [
