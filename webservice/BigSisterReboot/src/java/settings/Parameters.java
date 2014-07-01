@@ -13,7 +13,7 @@ package settings;
 public class Parameters {
     
     // in minutes
-    public static final int SENDING_INTERVAL = 5;
+    public static final int SENDING_INTERVAL = 1;
     
     
 }
