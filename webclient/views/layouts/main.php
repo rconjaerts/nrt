@@ -41,7 +41,7 @@ AppAsset::register($this);
                 'items' => [
 //                    ['label' => 'Explore', 'url' => ['/site/index']],
 					['label' => 'Video Livestream', 'url' => ['/site/videolive']],
-					['label' => 'Live Data', 'url' => ['/graph/movement']],
+					['label' => 'Live Data', 'url' => ['/site/live']],
 					['label' => 'Data analysis', 'url' => ['/site/data']],
                     ['label' => 'About', 'url' => ['/site/about']],
 					

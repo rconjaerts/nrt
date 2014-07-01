@@ -101,6 +101,8 @@ class GraphController extends Controller
 			'color' => '91,192,222'
 			]);
 	}
+	
+
 
 	public function actionNoise($date=null){
 		if(is_null($date)){

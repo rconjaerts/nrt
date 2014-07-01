@@ -1,4 +1,4 @@
-<?php
+	<?php
 use yii\helpers\Html;
 
 /**
@@ -162,7 +162,11 @@ use yii\helpers\Html;
 		
         }
 		$( document ).ready(function() {
-			setTimeout('refresh()', 10000);
+			window.setInterval(function(){
+			  refresh()
+			}, 10000);
 		});
+		
+		
 	</script>	
 </div>

@@ -61,22 +61,40 @@ class SiteController extends Controller
 			]);
 	}
 	
-	public function actionLive(){
-		$client = new \GuzzleHttp\Client();
-		$today  = mktime(0, 0, 0, date("m")  , date("d"), date("Y"));
-		$todayShow = date("d/m/Y");
-		$now = time();
-		// Get video data
+	public function actionLive($date=null){
+		if(is_null($date)){
+			$today  = mktime(0, 0, 0, date("m")  , date("d"), date("Y"));
+			$todayShow = date("d/m/Y");
+			$now = time();
+		} else {
+			$today = \DateTime::createFromFormat('d/m/Y', $date);
+			$today->setTime(0,0,1);
+			$now = clone $today;
+			$now->setTime(23,59,58);
+			$today = $today->getTimestamp();
+			$now = $now->getTimestamp();
+		}
+		
+		$client = new \GuzzleHttp\Client();		
 		$res = $client
 				->get('http://192.168.1.116:8080/BigSisterReboot/webresources/entities.event/historydata/'
 		.$this->accountId.'/'.$this->videoType.'/'.$today.'/'.$now, [
 		    'headers' => ['content-type' => 'application/json']
 		]);
 		$videoData = $res->json();
-		$latestTimestamp = $videoData[count($videoData)-1]["timestamp"];
-	
-        return $this->render('live', [
-			'latestTimestamp' => $latestTimestamp
+		
+		$videoY = array();
+		$videoX = array();
+		$firstTimestamp = $videoData[0]["timestamp"];
+		foreach($videoData as $event){
+		   $videoY[] = $event["value"];
+		   $videoX[] = $event["timestamp"] - $firstTimestamp;;
+		}
+		
+        return $this->render('/site/_graph', [
+			'dataY' => $videoY,
+			'dataX' => $videoX,
+			'color' => '91,192,222'
 			]);
 	}
 	
