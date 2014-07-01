@@ -113,8 +113,9 @@ public class EventFacadeREST extends AbstractFacade<Event> {
                 .setParameter("from", from)
                 .setParameter("to", to)
                 .getResultList();
-        
-        return generateEmptyDataStream(eventList, typeId);
+        if(eventList.size()>1)
+            return generateEmptyDataStream(eventList, typeId);
+        return eventList;
     }
     
     @GET
