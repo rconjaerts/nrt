@@ -54,13 +54,13 @@ input {
 	</div>
 	<h4>Movement</h4>
 	<div class="progress">
-	  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="<?= $movementValue ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= $movementValue ?>%">
+	  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="<?= $movementValue ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= 15*$movementValue ?>%">
 	    <span class="sr-only"><?= $movementValue ?>% Complete</span>
 	  </div>
 	</div>
 	<h4>Noise</h4>
 	<div class="progress">
-	  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<?= $noiseValue ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= $noiseValue ?>%">
+	  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<?= $noiseValue ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= 15*$noiseValue ?>%">
 	    <span class="sr-only"><?= $noiseValue ?>% Complete (warning)</span>
 	  </div>
 	</div>

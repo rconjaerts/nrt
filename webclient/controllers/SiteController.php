@@ -154,10 +154,11 @@ class SiteController extends Controller
 		$movementAmount = $videoCount / count($videoY) * 100;
 		$noiseAmount = $audioCount / count($audioY) * 100;
 		
-		$movementValue = $videoValue / 60 * 100;
-		$noiseValue = $audioValue  / 60 * 100;
+		$movementValue = $videoValue / ($videoRest) * 100;
+		$noiseValue = $audioValue / ($audioRest) * 100;
 	
-		$sleepQualityValue = (400 - $movementAmount - $movementValue - $noiseAmount - $noiseValue)/4;
+		$sleepQualityValue = 100 - ((2*$movementAmount + 2*$noiseAmount + $movementValue + $noiseValue) / 4);
+		//$sleepQualityValue = (400 - $movementAmount - $movementValue - $noiseAmount - $noiseValue)/4;
 		$comfortScore = round($sleepQualityValue/10 + 0.5);
 		if($comfortScore < 1){
 			$comfortScore = 1;
