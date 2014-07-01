@@ -140,9 +140,25 @@ public class EventFacadeREST extends AbstractFacade<Event> {
                 .setParameter("to", to)
                 .getResultList();
         
+        long audioCount = (long) em.createNamedQuery("Event.sleepComfortActivityCount")
+                .setParameter("accountId", accountId)
+                .setParameter("typeId", 1)
+                .setParameter("from", from)
+                .setParameter("to", to)
+                .getSingleResult();
+        
+        long videoCount = (long) em.createNamedQuery("Event.sleepComfortActivityCount")
+                .setParameter("accountId", accountId)
+                .setParameter("typeId", 2)
+                .setParameter("from", from)
+                .setParameter("to", to)
+                .getSingleResult();
+        
         return new SleepComfort(
                 calculateSleepComfort(eventAudioList), 
-                calculateSleepComfort(eventVideoList));
+                calculateSleepComfort(eventVideoList),
+                audioCount,
+                videoCount);
     }
     
     @Override
@@ -178,7 +194,7 @@ public class EventFacadeREST extends AbstractFacade<Event> {
         List<Event> addedEventList = new ArrayList<Event>();
         for(int i = 1; i <= minutes; i++) {
             int timestamp = (ev1.getTimestamp() + (intervalInMilliseconds * i));
-            addedEventList.add(new Event(-1, -1, 0, timestamp, typeId));
+            addedEventList.add(new Event(-1, -1, 100, timestamp, typeId));
         }
         return addedEventList;
     }
