@@ -16,14 +16,18 @@ input {
 	text-align: center;
 	padding: 0;
 	margin: 0;
+	line-height: normal;
+	width: 400px;
+	margin-bottom: 5px;
 }
+
 </style>
 <div class="site-index">	
 
-	<div class="jumbotron" style="padding-bottom: 0; padding-top: 0;">
+	<div class="jumbotron" style="padding-bottom: 10px; padding-top: 0;">
 	  <h1>Overall sleeping quality for</h1>
-	  <input type="text" data-date-format="dd/mm/yyyy" value="<?= $todayShow; ?>" id="datepicker">
-	  
+	  <input type="text" data-date-format="dd/mm/yyyy" value="<?= $todayShow; ?>" id="datepicker" width=300>
+	  <br>
 	  <div class="row">
 	  <?php for($i = 1; $i <= 10; $i++){
 		  if($i==$comfortScore){

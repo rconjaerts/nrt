@@ -160,11 +160,14 @@ class SiteController extends Controller
 	
 		$sleepQualityValue = (400 - $movementAmount - $movementValue - $noiseAmount - $noiseValue)/4;
 		$comfortScore = round($sleepQualityValue/10 + 0.5);
-		if($comfortScore==0){
+		if($comfortScore < 1){
 			$comfortScore = 1;
 		}
+		if($comfortScore > 10){
+			$comfortScore = 10;
+		}
 		
-			}
+		}
         return $this->render('data', [
 			'todayShow' => $todayShow,   
 			'dataX' => $dataX,    
