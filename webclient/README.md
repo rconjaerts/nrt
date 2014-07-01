@@ -1,9 +1,9 @@
-BigBrother
+BrotherBear
 ===========================================
 
 BRIEF
 -----
-TODO add words
+The smart babymonitor that's looking out for your baby.
 
 TEAM
 ----
