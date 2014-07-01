@@ -22,7 +22,7 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
-<body>
+<body style="background-color: #f3f3f3">
 <?php $this->beginBody() ?>
 <?= $content ?>
 <?php $this->endBody() ?>
