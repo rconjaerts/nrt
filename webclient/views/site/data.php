@@ -19,6 +19,17 @@ $this->title = 'Test';
     ///Boolean - Whether grid lines are shown across the chart
     scaleShowGridLines : true,
 
+	showTooltips: false,
+	
+	// Boolean - Whether to animate the chart
+	animation: false,
+
+	// Boolean - If we should show the scale at all
+	showScale: true,
+
+	scaleShowLabels: true,
+	
+	
     //String - Colour of the grid lines
     scaleGridLineColor : "rgba(0,0,0,.05)",
 
@@ -53,7 +64,9 @@ $this->title = 'Test';
     datasetFill : true,
 
     //String - A legend template
-    legendTemplate : false
+    legendTemplate : false,
+	
+	labelTemplateString : '',
 
 };
 		(function() {
@@ -75,13 +88,23 @@ $this->title = 'Test';
 				datasets: [
 						{
 							label: "Video",
-							fillColor: "rgba(220,220,220,0.7)",
+							fillColor: "rgba(255,165,0,0.7)",
 							strokeColor: "rgba(220,220,220,1)",
 							pointColor: "rgba(220,220,220,1)",
 							pointStrokeColor: "#fff",
 							pointHighlightFill: "#fff",
 							pointHighlightStroke: "rgba(220,220,220,1)",
-							data: <?php echo '[' . implode(', ', $dataY) . ']'; ?>
+							data: <?php echo '[' . implode(', ', $videoY) . ']'; ?>
+						},
+						{
+							label: "Video",
+							fillColor: "rgba(120,120,220,0.7)",
+							strokeColor: "rgba(120,120,220,1)",
+							pointColor: "rgba(220,220,220,1)",
+							pointStrokeColor: "#fff",
+							pointHighlightFill: "#fff",
+							pointHighlightStroke: "rgba(220,220,220,1)",
+							data: <?php echo '[' . implode(', ', $audioY) . ']'; ?>
 						}
 					]
 				};
