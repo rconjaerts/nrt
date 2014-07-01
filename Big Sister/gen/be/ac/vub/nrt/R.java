@@ -17,39 +17,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int barAxisColor=0x7f010007;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static final int barShowAxis=0x7f010009;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static final int barShowAxisLabel=0x7f01000a;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static final int barShowPopup=0x7f01000c;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static final int barShowText=0x7f01000b;
+        public static final int lineAxisColor=0x7f010001;
         /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
@@ -58,16 +26,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int lineAxisColor=0x7f010003;
-        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
-"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static final int lineStrokeColor=0x7f010002;
+        public static final int lineStrokeColor=0x7f010000;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -77,7 +36,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int lineStrokeSpacing=0x7f010005;
+        public static final int lineStrokeSpacing=0x7f010003;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -87,7 +46,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int lineStrokeWidth=0x7f010004;
+        public static final int lineStrokeWidth=0x7f010002;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -95,62 +54,53 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int lineUseDip=0x7f010006;
-        /** <p>Must be one of the following constant values.</p>
-<table>
-<colgroup align="left" />
-<colgroup align="left" />
-<colgroup align="left" />
-<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>horizontal</code></td><td>0</td><td></td></tr>
-<tr><td><code>vertical</code></td><td>1</td><td></td></tr>
-</table>
-         */
-        public static final int orientation=0x7f010008;
-        /** <p>Must be an integer value, such as "<code>100</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static final int pieInnerCircleRatio=0x7f010000;
-        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
-Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
-in (inches), mm (millimeters).
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static final int pieSlicePadding=0x7f010001;
+        public static final int lineUseDip=0x7f010004;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
+        public static final int bbsc1=0x7f020000;
+        public static final int bbsc10=0x7f020001;
+        public static final int bbsc2=0x7f020002;
+        public static final int bbsc3=0x7f020003;
+        public static final int bbsc4=0x7f020004;
+        public static final int bbsc5=0x7f020005;
+        public static final int bbsc6=0x7f020006;
+        public static final int bbsc7=0x7f020007;
+        public static final int bbsc8=0x7f020008;
+        public static final int bbsc9=0x7f020009;
+        public static final int ic_launcher=0x7f02000a;
+        public static final int icon=0x7f02000b;
     }
     public static final class id {
-        public static final int action_day=0x7f040006;
-        public static final int action_range=0x7f040007;
-        public static final int date=0x7f040002;
-        public static final int endDate=0x7f040005;
-        public static final int graph=0x7f040003;
-        public static final int horizontal=0x7f040000;
-        public static final int startDate=0x7f040004;
-        public static final int vertical=0x7f040001;
+        public static final int action_day=0x7f070008;
+        public static final int action_range=0x7f070009;
+        public static final int date=0x7f070004;
+        public static final int endDate=0x7f070007;
+        public static final int graph=0x7f070005;
+        public static final int imgBear=0x7f070000;
+        public static final int movementVal=0x7f070002;
+        public static final int noiseVal=0x7f070003;
+        public static final int restVal=0x7f070001;
+        public static final int startDate=0x7f070006;
     }
     public static final class layout {
-        public static final int day=0x7f030000;
-        public static final int range=0x7f030001;
+        public static final int datafragment=0x7f030000;
+        public static final int day=0x7f030001;
+        public static final int range=0x7f030002;
     }
     public static final class menu {
-        public static final int actionbar_actions=0x7f070000;
+        public static final int actionbar_actions=0x7f060000;
     }
     public static final class string {
-        public static final int app_name=0x7f050000;
-        public static final int day=0x7f050003;
-        public static final int fill_date=0x7f050001;
-        public static final int range=0x7f050002;
+        public static final int app_name=0x7f040000;
+        public static final int bearDescription=0x7f040008;
+        public static final int day=0x7f040003;
+        public static final int fill_date=0x7f040001;
+        public static final int movement=0x7f040005;
+        public static final int noise=0x7f040006;
+        public static final int number=0x7f040007;
+        public static final int quality=0x7f040009;
+        public static final int range=0x7f040002;
+        public static final int rest=0x7f040004;
     }
     public static final class style {
         /** 
@@ -174,125 +124,13 @@ containing a value of this type.
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f060000;
+        public static final int AppBaseTheme=0x7f050000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f060001;
+        public static final int AppTheme=0x7f050001;
     }
     public static final class styleable {
-        /** Attributes that can be used with a BarGraph.
-           <p>Includes the following attributes:</p>
-           <table>
-           <colgroup align="left" />
-           <colgroup align="left" />
-           <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #BarGraph_barAxisColor be.ac.vub.nrt:barAxisColor}</code></td><td></td></tr>
-           <tr><td><code>{@link #BarGraph_barShowAxis be.ac.vub.nrt:barShowAxis}</code></td><td></td></tr>
-           <tr><td><code>{@link #BarGraph_barShowAxisLabel be.ac.vub.nrt:barShowAxisLabel}</code></td><td></td></tr>
-           <tr><td><code>{@link #BarGraph_barShowPopup be.ac.vub.nrt:barShowPopup}</code></td><td></td></tr>
-           <tr><td><code>{@link #BarGraph_barShowText be.ac.vub.nrt:barShowText}</code></td><td></td></tr>
-           <tr><td><code>{@link #BarGraph_orientation be.ac.vub.nrt:orientation}</code></td><td></td></tr>
-           </table>
-           @see #BarGraph_barAxisColor
-           @see #BarGraph_barShowAxis
-           @see #BarGraph_barShowAxisLabel
-           @see #BarGraph_barShowPopup
-           @see #BarGraph_barShowText
-           @see #BarGraph_orientation
-         */
-        public static final int[] BarGraph = {
-            0x7f010007, 0x7f010008, 0x7f010009, 0x7f01000a,
-            0x7f01000b, 0x7f01000c
-        };
-        /**
-          <p>This symbol is the offset where the {@link be.ac.vub.nrt.R.attr#barAxisColor}
-          attribute's value can be found in the {@link #BarGraph} array.
-
-
-          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
-"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name be.ac.vub.nrt:barAxisColor
-        */
-        public static final int BarGraph_barAxisColor = 0;
-        /**
-          <p>This symbol is the offset where the {@link be.ac.vub.nrt.R.attr#barShowAxis}
-          attribute's value can be found in the {@link #BarGraph} array.
-
-
-          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name be.ac.vub.nrt:barShowAxis
-        */
-        public static final int BarGraph_barShowAxis = 2;
-        /**
-          <p>This symbol is the offset where the {@link be.ac.vub.nrt.R.attr#barShowAxisLabel}
-          attribute's value can be found in the {@link #BarGraph} array.
-
-
-          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name be.ac.vub.nrt:barShowAxisLabel
-        */
-        public static final int BarGraph_barShowAxisLabel = 3;
-        /**
-          <p>This symbol is the offset where the {@link be.ac.vub.nrt.R.attr#barShowPopup}
-          attribute's value can be found in the {@link #BarGraph} array.
-
-
-          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name be.ac.vub.nrt:barShowPopup
-        */
-        public static final int BarGraph_barShowPopup = 5;
-        /**
-          <p>This symbol is the offset where the {@link be.ac.vub.nrt.R.attr#barShowText}
-          attribute's value can be found in the {@link #BarGraph} array.
-
-
-          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name be.ac.vub.nrt:barShowText
-        */
-        public static final int BarGraph_barShowText = 4;
-        /**
-          <p>This symbol is the offset where the {@link be.ac.vub.nrt.R.attr#orientation}
-          attribute's value can be found in the {@link #BarGraph} array.
-
-
-          <p>Must be one of the following constant values.</p>
-<table>
-<colgroup align="left" />
-<colgroup align="left" />
-<colgroup align="left" />
-<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>horizontal</code></td><td>0</td><td></td></tr>
-<tr><td><code>vertical</code></td><td>1</td><td></td></tr>
-</table>
-          @attr name be.ac.vub.nrt:orientation
-        */
-        public static final int BarGraph_orientation = 1;
         /** Attributes that can be used with a LineGraph.
            <p>Includes the following attributes:</p>
            <table>
@@ -312,8 +150,8 @@ containing a value of this type.
            @see #LineGraph_lineUseDip
          */
         public static final int[] LineGraph = {
-            0x7f010002, 0x7f010003, 0x7f010004, 0x7f010005,
-            0x7f010006
+            0x7f010000, 0x7f010001, 0x7f010002, 0x7f010003,
+            0x7f010004
         };
         /**
           <p>This symbol is the offset where the {@link be.ac.vub.nrt.R.attr#lineAxisColor}
@@ -391,50 +229,5 @@ containing a value of this type.
           @attr name be.ac.vub.nrt:lineUseDip
         */
         public static final int LineGraph_lineUseDip = 4;
-        /** Attributes that can be used with a PieGraph.
-           <p>Includes the following attributes:</p>
-           <table>
-           <colgroup align="left" />
-           <colgroup align="left" />
-           <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #PieGraph_pieInnerCircleRatio be.ac.vub.nrt:pieInnerCircleRatio}</code></td><td></td></tr>
-           <tr><td><code>{@link #PieGraph_pieSlicePadding be.ac.vub.nrt:pieSlicePadding}</code></td><td></td></tr>
-           </table>
-           @see #PieGraph_pieInnerCircleRatio
-           @see #PieGraph_pieSlicePadding
-         */
-        public static final int[] PieGraph = {
-            0x7f010000, 0x7f010001
-        };
-        /**
-          <p>This symbol is the offset where the {@link be.ac.vub.nrt.R.attr#pieInnerCircleRatio}
-          attribute's value can be found in the {@link #PieGraph} array.
-
-
-          <p>Must be an integer value, such as "<code>100</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name be.ac.vub.nrt:pieInnerCircleRatio
-        */
-        public static final int PieGraph_pieInnerCircleRatio = 0;
-        /**
-          <p>This symbol is the offset where the {@link be.ac.vub.nrt.R.attr#pieSlicePadding}
-          attribute's value can be found in the {@link #PieGraph} array.
-
-
-          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
-Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
-in (inches), mm (millimeters).
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name be.ac.vub.nrt:pieSlicePadding
-        */
-        public static final int PieGraph_pieSlicePadding = 1;
     };
 }
