@@ -189,5 +189,4 @@ class SiteController extends Controller
 			'comfortScore' => $comfortScore,
 			]);
 	}
-	
 }
