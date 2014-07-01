@@ -6,6 +6,7 @@ import sys
 import requests
 import json
 import time
+import blinker
 
 def handle_motion(img_path):
     print "handling motion"
