@@ -71,7 +71,7 @@ class SiteController extends Controller
 		// Get video data
 		$res = $client
 				->get('http://192.168.1.116:8080/BigSisterReboot/webresources/entities.event/historydata/'
-		.$this->accountId.'/'.$this->videoType.'/'.'1'.'/'.$now, [
+		.$this->accountId.'/'.$this->videoType.'/'.$today.'/'.$now, [
 		    'headers' => ['content-type' => 'application/json']
 		]);
 		$videoData = $res->json();
@@ -79,7 +79,7 @@ class SiteController extends Controller
 		// Get audio data
 		$res = $client
 				->get('http://192.168.1.116:8080/BigSisterReboot/webresources/entities.event/historydata/'
-						. $this->accountId.'/'.$this->audioType.'/'.'1'.'/'.$now, [
+						. $this->accountId.'/'.$this->audioType.'/'.$today.'/'.$now, [
 		    'headers' => ['content-type' => 'application/json']
 		]);			
 		$audioData = $res->json();
@@ -93,7 +93,10 @@ class SiteController extends Controller
 			
 		$sleepComfort = $res->json();
 		
-		print_r($sleepComfort);
+		$audioValue = $sleepComfort['audioValue'];
+		$videoValue = $sleepComfort['videoValue'];
+		
+		$comfortScore = 9;
 		
 		// Convert to easy arrays for graph
 		$videoY = array();
@@ -122,7 +125,13 @@ class SiteController extends Controller
 			'todayShow' => $todayShow,   
 			'dataX' => $dataX,    
 			'videoY' => $videoY,
+			'videoX' => $videoX,
 			'audioY' => $audioY,
+			'audioX' => $audioX,
+			'audioValue' => $audioValue,
+			'videoValue' => $videoValue,
+			'comfortScore' => $comfortScore,
+			'sleepComfort' => $sleepComfort,
 			]);
 	}
 	
