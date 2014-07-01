@@ -29,7 +29,7 @@ AMPLITUDE_FILE = '/home/pi/last_amplitude'
 HW_DETECTION_CMD = "cat /proc/asound/cards"
 # You need to replace MICROPHONE with the name of your microphone, as reported
 # by /proc/asound/cards
-SAMPLE_DURATION = 3 # seconds
+SAMPLE_DURATION = 2 # seconds
 FORMAT = 'S16_LE'   # this is the format that my USB microphone generates
 THRESHOLD = 0.10
 RECORD_FILENAME='/tmp/noise.wav'
