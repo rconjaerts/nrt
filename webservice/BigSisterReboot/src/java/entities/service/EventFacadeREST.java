@@ -188,13 +188,13 @@ public class EventFacadeREST extends AbstractFacade<Event> {
     }
     
     private List<Event> generateEmptyDataStreamBetweenTwoEvents(Event ev1, Event ev2, int typeId) {
-        int intervalInMilliseconds = 60000 * Parameters.SENDING_INTERVAL;
+        int intervalInSeconds = 60 * Parameters.SENDING_INTERVAL;
         int difference = Math.abs(ev1.getTimestamp() - ev2.getTimestamp());
-        int minutes = (int) (((difference / (1000*60)) % 60)/ Parameters.SENDING_INTERVAL);
+        int minutes = (int) ((difference / 60) / Parameters.SENDING_INTERVAL);
         List<Event> addedEventList = new ArrayList<Event>();
         for(int i = 1; i <= minutes; i++) {
-            int timestamp = (ev1.getTimestamp() + (intervalInMilliseconds * i));
-            addedEventList.add(new Event(-1, -1, 100, timestamp, typeId));
+            int timestamp = (ev1.getTimestamp() + (intervalInSeconds * i));
+            addedEventList.add(new Event(-1, -1, 0, timestamp, typeId));
         }
         return addedEventList;
     }
