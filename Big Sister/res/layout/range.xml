@@ -36,5 +36,6 @@
     <be.ac.vub.nrt.holograph.LineGraph
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:id="@+id/graph"/>
+        android:id="@+id/graph"
+        android:layout_margin="7dp"/>
 </LinearLayout>

@@ -1,6 +1,12 @@
 <resources>
-    <string name="app_name">Big Sister</string>
+    <string name="app_name">BrotherBear</string>
     <string name="fill_date">20/06/2014</string>
     <string name="range">Range</string>
     <string name="day">Day</string>
+    <string name="rest">Good nights\' rest</string>
+    <string name="movement">Movement</string>
+    <string name="noise">Noise</string>
+    <string name="number">67</string>
+    <string name="bearDescription">The bear represents how well the baby slept during the day.</string>
+    <string name="quality">Overall sleeping quality</string>
 </resources>

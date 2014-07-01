@@ -4,7 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" 
     android:orientation="vertical">
-    <RelativeLayout 
+    <fragment android:name="be.ac.vub.nrt.DataFragment"
+		android:id="@+id/dataFragment"
+		android:layout_weight="1"
+		android:layout_width="match_parent"
+		android:layout_height="0dp" />
+    <!-- <RelativeLayout 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/background_light">
@@ -24,5 +29,6 @@
     <be.ac.vub.nrt.holograph.LineGraph
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:id="@+id/graph"/>
+        android:id="@+id/graph"
+        android:layout_margin="7dp"/> -->
 </LinearLayout>

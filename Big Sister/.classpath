@@ -6,6 +6,8 @@
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
 	<classpathentry kind="lib" path="libs/okhttp-2.0.0.jar"/>
-	<classpathentry kind="lib" path="/Users/robrechtconjaerts/Documents/Robrecht/Eigen Werk/Eclipse libraries/google-gson-2.2.4/gson-2.2.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/robrechtconjaerts/Documents/Robrecht/Eigen Werk/Eclipse libraries/google-gson-2.2.4/gson-2.2.4.jar"/>
+	<classpathentry kind="lib" path="libs/okio-1.0.0.jar"/>
+	<classpathentry kind="lib" path="libs/GraphView-3.1.2.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
