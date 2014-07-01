@@ -60,6 +60,26 @@ class SiteController extends Controller
         return $this->render('videolive', [
 			]);
 	}
+	
+	public function actionLive(){
+		$client = new \GuzzleHttp\Client();
+		$today  = mktime(0, 0, 0, date("m")  , date("d"), date("Y"));
+		$todayShow = date("d/m/Y");
+		$now = time();
+		// Get video data
+		$res = $client
+				->get('http://192.168.1.116:8080/BigSisterReboot/webresources/entities.event/historydata/'
+		.$this->accountId.'/'.$this->videoType.'/'.$today.'/'.$now, [
+		    'headers' => ['content-type' => 'application/json']
+		]);
+		$videoData = $res->json();
+		$latestTimestamp = $videoData[count($videoData)-1]["timestamp"];
+	
+        return $this->render('live', [
+			'latestTimestamp' => $latestTimestamp
+			]);
+	}
+	
 	public function actionData($date=null){
 		if(is_null($date)){
 			$today  = mktime(0, 0, 0, date("m")  , date("d"), date("Y"));

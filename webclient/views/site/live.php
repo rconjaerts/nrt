@@ -1,4 +1,22 @@
-<embed type="application/x-vlc-plugin"
-name="102"
-autoplay="yes" loop="yes" width=100% height="505"
-target="http://192.168.137.16:8888" />
+<?php
+use yii\helpers\Html;
+
+/**
+ * @var yii\web\View $this
+ * @var $content
+ */
+$this->title = 'Live';
+?>
+<div class="live">
+	<?php echo $latestTimestamp; ?>
+	<script type="text/javascript">
+		setInterval ( "checkForNewData()", 5000 );
+
+		function checkForNewData()
+		{
+		
+		  console.log("test");
+		}
+
+	</script>
+</div>
