@@ -4,6 +4,7 @@ import time
 
 # blinking function  
 def blink(pin, blinks=1, sleeptime=0.5): 
+        GPIO.setwarnings(False)
         GPIO.setmode(GPIO.BOARD)  
         GPIO.setup(pin, GPIO.OUT)  
         for i in range(0,blinks):

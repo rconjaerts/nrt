@@ -62,7 +62,6 @@ img_path = str(sys.argv[1]).strip()
 
 # motion pictures end with m.jpg, so here we differentiate between motion pics and snapshots
 if img_path[-5:] == 'm.jpg':
-    blinker.blink(11, 5, 0.3)
     handle_motion(img_path)
 else:
     handle_snapshot(img_path)
