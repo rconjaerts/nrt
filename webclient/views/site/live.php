@@ -14,9 +14,7 @@ $this->title = 'Live';
 
 		function checkForNewData()
 		{
-		
 		  console.log("test");
 		}
-
 	</script>
 </div>
