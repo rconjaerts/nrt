@@ -79,41 +79,39 @@ use yii\helpers\Html;
 	};
 	
 	
-	var myLineChart = null;
-		$(function() {
-			
-			var canvas = document.getElementById('mCanvas'),
+	var canvas = document.getElementById('mCanvas'),
 				context = canvas.getContext('2d');
-			function resizeCanvas() {
-					canvas.width = 1280 //window.innerWidth;
-					canvas.height = 636 //window.innerHeight;
-					drawStuff(); 
-			}
-			window.addEventListener('resize', resizeCanvas, false);
-			resizeCanvas();
-			
-		
-			function drawStuff() {
-				var data = {
-				labels: <?php echo '[' . implode(', ', $dataX) . ']'; ?>,
-				datasets: [
-						{
-							label: "Video",
-							strokeColor: "rgba(<?php echo $color; ?>, 1)",
-							fillColor: "rgba(<?php echo $color; ?>, 0.7)",
-							pointColor: "rgba(220,220,220,1)",
-							pointStrokeColor: "#fff",
-							pointHighlightFill: "#fff",
-							pointHighlightStroke: "rgba(220,220,220,1)",
-							data: <?php echo '[' . implode(', ', $dataY) . ']'; ?>
-						},
-					]
-				};
-				// Get the context of the canvas element we want to select
-				var ctx = document.getElementById("mCanvas").getContext("2d");
-				myLineChart = new Chart(ctx).Line(data, options);
-			}
-		});
+	function resizeCanvas() {
+			canvas.width = 1280 //window.innerWidth;
+			canvas.height = 636 //window.innerHeight;
+			drawStuff(); 
+	}
+	window.addEventListener('resize', resizeCanvas, false);
+	resizeCanvas();
+	
+
+	function drawStuff() {
+		var data = {
+		labels: <?php echo '[' . implode(', ', $dataX) . ']'; ?>,
+		datasets: [
+				{
+					label: "Video",
+					strokeColor: "rgba(<?php echo $color; ?>, 1)",
+					fillColor: "rgba(<?php echo $color; ?>, 0.7)",
+					pointColor: "rgba(220,220,220,1)",
+					pointStrokeColor: "#fff",
+					pointHighlightFill: "#fff",
+					pointHighlightStroke: "rgba(220,220,220,1)",
+					data: <?php echo '[' . implode(', ', $dataY) . ']'; ?>
+				},
+			]
+		};
+		// Get the context of the canvas element we want to select
+		var ctx = document.getElementById("mCanvas").getContext("2d");
+		myLineChart = new Chart(ctx).Line(data, options);
+	}
+	
+	var myLineChart = null;
 		
 		function drawStuffX(xdata, ydata) {
 			var data = {
@@ -134,14 +132,19 @@ use yii\helpers\Html;
 			// Get the context of the canvas element we want to select
 			var canvas = document.getElementById('mCanvas'),
 				ctx = canvas.getContext('2d');
+			canvas.width = 1280 //window.innerWidth;
+			canvas.height = 636
 			ctx.clearRect(0,0, canvas.width, canvas.height);
-			scale = myLineChart.scale
+			//scale = myLineChart.scale
 			myLineChart = new Chart(ctx).Line(data, options);
-			myLineChart.scale = scale
+			//myLineChart.scale = scale
+			//resizeCanvas();
+			
 		}
 		
         function refresh() {
-			/*var url = '<?= Yii::$app->homeUrl; ?>' + '/graph/partial'
+			console.log("fetch data");
+			var url = '<?= Yii::$app->homeUrl; ?>' + '/graph/partial'
             console.log(url);
 	
 	        jQuery.ajax({
@@ -156,7 +159,10 @@ use yii\helpers\Html;
 	         },
 	         'cache': false
 		 });
-			*/
+		
         }
+		$( document ).ready(function() {
+			setTimeout('refresh()', 10000);
+		});
 	</script>	
 </div>
