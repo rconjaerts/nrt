@@ -12,7 +12,7 @@ amplitude = float(sys.argv[2])
 value = 100 * (amplitude - threshold) / (1-threshold)
 
 
-blinker.blink(15, 5, 0.1)
+blinker.blink(15, 10, 0.1)
 
 
 # Send the event to our server

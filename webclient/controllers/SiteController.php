@@ -60,40 +60,78 @@ class SiteController extends Controller
         return $this->render('videolive', [
 			]);
 	}
-	
-	public function actionAudio(){
-        return $this->render('audio', [
-			]);
-	}
-	
-	public function actionVideo(){
+	public function actionData(){
 		
 		$today  = mktime(0, 0, 0, date("m")  , date("d"), date("Y"));
 		$todayShow = date("d/m/Y");
 		$now = time();
 		
 		$client = new \GuzzleHttp\Client();
+		
+		// Get video data
 		$res = $client
-				->get('http://192.168.1.116:8080/BigSisterReboot/webresources/entities.event/historydata/'.$this->accountId.'/'.$this->videoType.'/'.$today.'/'.$now, [
+				->get('http://192.168.1.116:8080/BigSisterReboot/webresources/entities.event/historydata/'
+		.$this->accountId.'/'.$this->videoType.'/'.$today.'/'.$now, [
 		    'headers' => ['content-type' => 'application/json']
 		]);
-		$data = $res->json();
+		$videoData = $res->json();
 		
-		$dataY = array();
-		$dataX = array();
-		$firstTimestamp = $data[0]["timestamp"];
-		foreach($data as $event)
-		{
-		   $dataY[] = $event["value"];
-		   $timestamp = $event["timestamp"] - $firstTimestamp;
-		   $dataX[] = $timestamp;
-	
+		// Get audio data
+		$res = $client
+				->get('http://192.168.1.116:8080/BigSisterReboot/webresources/entities.event/historydata/'
+						. $this->accountId.'/'.$this->audioType.'/'.$today.'/'.$now, [
+		    'headers' => ['content-type' => 'application/json']
+		]);			
+		$audioData = $res->json();
+		
+		// sleep comfort
+		$res = $client
+				->get('http://192.168.1.116:8080/BigSisterReboot/webresources/entities.event/sleepcomfort/'
+						. $this->accountId.'/'.'1'.'/'.$now, [
+		    'headers' => ['content-type' => 'application/json']
+		]);		
+			
+		$sleepComfort = $res->json();
+		
+		$audioValue = $sleepComfort['audioValue'];
+		$videoValue = $sleepComfort['videoValue'];
+		
+		$comfortScore = 9;
+		
+		// Convert to easy arrays for graph
+		$videoY = array();
+		$videoX = array();
+		$audioY = array();
+		$audioX = array();
+		$firstTimestamp = min($videoData[0]["timestamp"], $audioData[0]["timestamp"]);
+		foreach($videoData as $event){
+		   $videoY[] = $event["value"];
+		   $videoX[] = $event["timestamp"] - $firstTimestamp;;
 		}
-
-        return $this->render('video', [
-			'todayShow' => $todayShow,       
-			'dataY' => $dataY,
-			'dataX' => $dataX
+		foreach($audioData as $event){
+		   $audioY[] = $event["value"];
+		   $audioX[] = $event["timestamp"] - $firstTimestamp;;
+		}
+		
+		$videoHighest = end($videoX)['timestamp'];
+		$audioHighest = end($audioX)['timestamp'];
+		
+		if($videoHighest > $audioHighest){
+			$dataX = $videoX;
+		} else {
+			$dataX = $audioX;
+		}
+        return $this->render('data', [
+			'todayShow' => $todayShow,   
+			'dataX' => $dataX,    
+			'videoY' => $videoY,
+			'videoX' => $videoX,
+			'audioY' => $audioY,
+			'audioX' => $audioX,
+			'audioValue' => $audioValue,
+			'videoValue' => $videoValue,
+			'comfortScore' => $comfortScore,
+			'sleepComfort' => $sleepComfort,
 			]);
 	}
 	

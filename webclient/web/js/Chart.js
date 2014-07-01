@@ -1466,7 +1466,6 @@
 				this.xScalePaddingRight = this.padding;
 				this.xScalePaddingLeft = this.padding;
 			}
-
 		},
 		// Needs to be overidden in each Chart type
 		// Otherwise we need to pass all the data into the scale class
@@ -1539,6 +1538,7 @@
 
 				},this);
 
+				var counter = 0;
 				each(this.xLabels,function(label,index){
 					var xPos = this.calculateX(index) + aliasPixel(this.lineWidth),
 						// Check to see if line/bar here and decide where to place the line
@@ -1573,14 +1573,21 @@
 					ctx.stroke();
 					ctx.closePath();
 
+					console.log(counter);
 					ctx.save();
 					ctx.translate(xPos,(isRotated) ? this.endPoint + 12 : this.endPoint + 8);
 					ctx.rotate(toRadians(this.xLabelRotation)*-1);
 					ctx.font = this.font;
 					ctx.textAlign = (isRotated) ? "right" : "center";
 					ctx.textBaseline = (isRotated) ? "middle" : "top";
-					ctx.fillText(label, 0, 0);
+					if(counter % 10 == 0){
+						//console.log(label);
+						label = label / 50	
+						ctx.fillText(label, 0, 0);
+					}
 					ctx.restore();
+					counter++;
+					
 				},this);
 
 			}
