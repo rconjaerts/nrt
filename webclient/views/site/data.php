@@ -8,44 +8,71 @@ use yii\widgets\ActiveForm;
 $this->title = 'Test';
 ?>
 <div class="site-index">	
-	<?php
-	print_r($sleepComfort);
-		
-	?>
+	<?php	
+	$movementAmount = $videoCount / count($videoY) * 100;
+	$movementValue = $videoValue / 30 * 100;
+	$noiseAmount = $audioCount / count($audioY) * 100;
+	$noiseValue = $audioValue / 30 * 100;
+	
+	$sleepQualityValue = (400 - $movementAmount - $movementValue - $noiseAmount - $noiseValue)/4;
+	$comfortScore = round($sleepQualityValue/10 + 0.5);
+	if($comfortScore==0){
+		$comfortScore = 1;
+	}
+	?>	
+	
 	<div class="jumbotron" style="padding-bottom: 0;">
-	  <h1>Sleep summary for <?= $todayShow; ?></h1>
-  	<img src=<?= Yii::$app->homeUrl.'/../img/bbsc'.$comfortScore.'.png'; ?>>
+	  <h1>Overall sleeping quality for <?= $todayShow; ?></h1>
+	  <br>
+	  <div class="row">
+	  <?php for($i = 1; $i <= 10; $i++){
+		  if($i==$comfortScore){
+			  echo '<div class="col-md-3">';
+			  echo '<img src=' . Yii::$app->homeUrl .'/../img/bbsc'.$i.'.png style="width: 200px; height:200px;">';
+			  echo '</div>';
+		  } else {
+			  echo '<div class="col-md-1">';
+			  echo '<img src=' . Yii::$app->homeUrl .'/../img/bbsc'.$i.'.png style="width: 50px; height:50px; opacity:0.6">';
+			  echo '</div>';
+		  }
+	  }
+	  ?>
+  	 </div>
+  	<!-- <img src=<?= Yii::$app->homeUrl.'/../img/bbsc'.$comfortScore.'.png'; ?> -->
 	</div>
 	<div style="padding-right: 60px; padding-left:60px;">
 		<h4>Good nights' rest</h4>
 		
 	<div class="progress">
-	  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-	    <span class="sr-only">40% Complete (success)</span>
+	  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?= $sleepQualityValue ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= $sleepQualityValue ?>%">
+	    <span class="sr-only"><?= $sleepQualityValue ?>% Complete (success)</span>
 	  </div>
 	</div>
 	<h4>Movement</h4>
-	
 	<div class="progress">
-	  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-	    <span class="sr-only">20% Complete</span>
+	  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="<?= $movementValue ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= $movementValue ?>%">
+	    <span class="sr-only"><?= $movementValue ?>% Complete</span>
 	  </div>
 	</div>
 	<h4>Noise</h4>
 	<div class="progress">
-	  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-	    <span class="sr-only">60% Complete (warning)</span>
+	  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<?= $noiseValue ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= $noiseValue ?>%">
+	    <span class="sr-only"><?= $noiseValue ?>% Complete (warning)</span>
 	  </div>
 	</div>
 
 </div>
 
-	<h3 style="margin-left:60px;">Graph overview</h3>	
-	<center>
 	<!-- <canvas id="myChart" style="max-width: 80%"></canvas> -->
+	<h2 style="margin-left:60px;">Movement graph</h2>	
+	<center>
+
 	<canvas id="video" style="max-width: 80%"></canvas>
-	<canvas id="audio" style="max-width: 80%"></canvas>
+</center>
+	<h2 style="margin-left:60px;">Noise graph</h2>	
+	<center>
 	
+	<canvas id="audio" style="max-width: 80%"></canvas>
 	</center>
 	<script>
 	var options = {

@@ -1573,7 +1573,7 @@
 					ctx.stroke();
 					ctx.closePath();
 
-					console.log(counter);
+					//console.log(counter);
 					ctx.save();
 					ctx.translate(xPos,(isRotated) ? this.endPoint + 12 : this.endPoint + 8);
 					ctx.rotate(toRadians(this.xLabelRotation)*-1);

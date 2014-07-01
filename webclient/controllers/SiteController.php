@@ -94,7 +94,10 @@ class SiteController extends Controller
 		$sleepComfort = $res->json();
 		
 		$audioValue = $sleepComfort['audioValue'];
+		$audioCount = $sleepComfort['audioCount'];
 		$videoValue = $sleepComfort['videoValue'];
+		$videoCount = $sleepComfort['videoCount'];
+		
 		
 		$comfortScore = 9;
 		
@@ -116,6 +119,7 @@ class SiteController extends Controller
 		$videoHighest = end($videoX)['timestamp'];
 		$audioHighest = end($audioX)['timestamp'];
 		
+		
 		if($videoHighest > $audioHighest){
 			$dataX = $videoX;
 		} else {
@@ -129,7 +133,9 @@ class SiteController extends Controller
 			'audioY' => $audioY,
 			'audioX' => $audioX,
 			'audioValue' => $audioValue,
+			'audioCount' => $audioCount,
 			'videoValue' => $videoValue,
+			'videoCount' => $videoCount,
 			'comfortScore' => $comfortScore,
 			'sleepComfort' => $sleepComfort,
 			]);
