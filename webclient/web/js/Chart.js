@@ -1580,9 +1580,9 @@
 					ctx.font = this.font;
 					ctx.textAlign = (isRotated) ? "right" : "center";
 					ctx.textBaseline = (isRotated) ? "middle" : "top";
-					if(counter % 10 == 0){
+					if(counter % 50 == 0){
 						//console.log(label);
-						label = label / 50	
+						label = counter	
 						ctx.fillText(label, 0, 0);
 					}
 					ctx.restore();

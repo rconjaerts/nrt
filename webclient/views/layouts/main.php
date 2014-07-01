@@ -9,6 +9,8 @@ use app\assets\AppAsset;
  * @var \yii\web\View $this
  * @var string $content
  */
+$this->title = 'BrotherBear';
+
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>

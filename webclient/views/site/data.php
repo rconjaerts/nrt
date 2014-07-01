@@ -7,7 +7,6 @@ use dosamigos\datepicker\DatePicker;
  * @var yii\web\View $this
  * @var $rows
  */
-$this->title = 'Test';
 ?>
 <style>
 input {
