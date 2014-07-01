@@ -5,13 +5,14 @@
     android:layout_height="match_parent" 
     android:orientation="vertical">
     <TextView
+        android:id="@+id/txtUnImp1"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:text="@string/quality"
 		android:textSize="25sp"
 		android:layout_margin="7dp"
 		android:layout_gravity="center_horizontal"/>
-    <ImageView 
+    <ImageView
         android:id="@+id/imgBear"
 		android:layout_width="100dp"
 		android:layout_height="100dp"
@@ -19,43 +20,52 @@
 		android:src="@drawable/bbsc5"
 		android:layout_gravity="center_horizontal"
         />
+    <ProgressBar
+        android:id="@+id/dataProgressBar"
+        style="?android:attr/progressBarStyleLarge"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_horizontal"/>
     <TextView
+        android:id="@+id/txtUnImp2"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:text="@string/rest"
 		android:textSize="15sp"
 		android:layout_margin="7dp"/>
+    <View
+	    android:id="@+id/recRest"
+	    android:layout_margin="7dp"
+	    android:layout_width="305dp"
+	    android:layout_height="20dp"
+	    android:background="@drawable/rectangle_rest"
+	    android:layout_gravity="left"/>
     <TextView
-        android:id="@+id/restVal"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:text="@string/number"
-		android:textSize="15sp"
-		android:layout_margin="7dp"/>
-    <TextView
+        android:id="@+id/txtUnImp3"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:text="@string/movement"
 		android:textSize="15sp"
 		android:layout_margin="7dp"/>
+    <View
+	    android:id="@+id/recMov"
+	    android:layout_margin="7dp"
+	    android:layout_width="305dp"
+	    android:layout_height="20dp"
+	    android:background="@drawable/rectangle_mov"
+	    android:layout_gravity="left"/>
     <TextView
-        android:id="@+id/movementVal"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:text="@string/number"
-		android:textSize="15sp"
-		android:layout_margin="7dp"/>
-    <TextView
+        android:id="@+id/txtUnImp4"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:text="@string/noise"
 		android:textSize="15sp"
 		android:layout_margin="7dp"/>
-    <TextView
-        android:id="@+id/noiseVal"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:text="@string/number"
-		android:textSize="15sp"
-		android:layout_margin="7dp"/>
+    <View
+	    android:id="@+id/recNoise"
+	    android:layout_margin="7dp"
+	    android:layout_width="305dp"
+	    android:layout_height="20dp"
+	    android:background="@drawable/rectangle_noise"
+	    android:layout_gravity="left"/>
 </LinearLayout>

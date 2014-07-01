@@ -16,16 +16,11 @@
         <activity
 	        android:name=".Day"
 	        android:label="@string/app_name"
-	        android:screenOrientation="landscape">
+	        android:screenOrientation="portrait">
 	        <intent-filter>
 	            <action android:name="android.intent.action.MAIN" />
 	            <category android:name="android.intent.category.LAUNCHER" />
 	        </intent-filter>
-    	</activity>
-    	<activity
-	        android:name=".Range"
-	        android:label="@string/app_name"
-	        android:screenOrientation="landscape">
     	</activity>
     </application>
 </manifest>

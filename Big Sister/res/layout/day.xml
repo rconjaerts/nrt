@@ -3,32 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent" 
-    android:orientation="vertical">
-    <fragment android:name="be.ac.vub.nrt.DataFragment"
-		android:id="@+id/dataFragment"
-		android:layout_weight="1"
-		android:layout_width="match_parent"
-		android:layout_height="0dp" />
-    <!-- <RelativeLayout 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/background_light">
-        <Button 
-            android:id="@+id/date"
-            android:layout_width="250dp"
-    		android:layout_height="wrap_content"
-    		android:text="@string/fill_date"
-			android:layout_centerVertical="true"
-			android:layout_centerHorizontal="true"
-			android:textSize="15sp"
-			android:layout_margin="7dp"
-    		android:drawableLeft="@android:drawable/ic_menu_add"
-			android:onClick="showDatePickerDialog"
-            />
-    </RelativeLayout>
-    <be.ac.vub.nrt.holograph.LineGraph
-        android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:baselineAligned="false">
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:id="@+id/graph"
-        android:layout_margin="7dp"/> -->
+        android:layout_weight="1" >
+    </android.support.v4.view.ViewPager>
 </LinearLayout>

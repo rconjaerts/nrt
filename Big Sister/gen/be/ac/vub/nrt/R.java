@@ -69,38 +69,52 @@ containing a value of this type.
         public static final int bbsc9=0x7f020009;
         public static final int ic_launcher=0x7f02000a;
         public static final int icon=0x7f02000b;
+        public static final int rectangle_mov=0x7f02000c;
+        public static final int rectangle_noise=0x7f02000d;
+        public static final int rectangle_rest=0x7f02000e;
     }
     public static final class id {
-        public static final int action_day=0x7f070008;
-        public static final int action_range=0x7f070009;
-        public static final int dataFragment=0x7f070004;
-        public static final int endDate=0x7f070006;
-        public static final int graph=0x7f070007;
-        public static final int imgBear=0x7f070000;
-        public static final int movementVal=0x7f070002;
-        public static final int noiseVal=0x7f070003;
-        public static final int restVal=0x7f070001;
-        public static final int startDate=0x7f070005;
+        public static final int action_change_date=0x7f070011;
+        public static final int dataProgressBar=0x7f070003;
+        public static final int endDate=0x7f07000c;
+        public static final int graph=0x7f07000d;
+        public static final int imgBear=0x7f070002;
+        public static final int pager=0x7f07000a;
+        public static final int recMov=0x7f070007;
+        public static final int recNoise=0x7f070009;
+        public static final int recRest=0x7f070005;
+        public static final int shape=0x7f07000e;
+        public static final int shape2=0x7f07000f;
+        public static final int shape3=0x7f070010;
+        public static final int startDate=0x7f07000b;
+        public static final int txtUnImp1=0x7f070000;
+        public static final int txtUnImp2=0x7f070004;
+        public static final int txtUnImp3=0x7f070006;
+        public static final int txtUnImp4=0x7f070008;
+        public static final int webview=0x7f070001;
     }
     public static final class layout {
-        public static final int datafragment=0x7f030000;
-        public static final int day=0x7f030001;
-        public static final int range=0x7f030002;
+        public static final int audiofragment=0x7f030000;
+        public static final int datafragment=0x7f030001;
+        public static final int day=0x7f030002;
+        public static final int range=0x7f030003;
+        public static final int videofragment=0x7f030004;
     }
     public static final class menu {
         public static final int actionbar_actions=0x7f060000;
     }
     public static final class string {
         public static final int app_name=0x7f040000;
-        public static final int bearDescription=0x7f040008;
-        public static final int day=0x7f040003;
+        public static final int bearDescription=0x7f040009;
+        public static final int changeDate=0x7f040002;
+        public static final int day=0x7f040004;
         public static final int fill_date=0x7f040001;
-        public static final int movement=0x7f040005;
-        public static final int noise=0x7f040006;
-        public static final int number=0x7f040007;
-        public static final int quality=0x7f040009;
-        public static final int range=0x7f040002;
-        public static final int rest=0x7f040004;
+        public static final int movement=0x7f040006;
+        public static final int noise=0x7f040007;
+        public static final int number=0x7f040008;
+        public static final int quality=0x7f04000a;
+        public static final int range=0x7f040003;
+        public static final int rest=0x7f040005;
     }
     public static final class style {
         /** 

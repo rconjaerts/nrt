@@ -1,8 +1,4 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
-    <item android:id="@+id/action_day"
-          android:icon="@android:drawable/ic_menu_agenda"
-          android:title="@string/day"/>
-    <item android:id="@+id/action_range"
-          android:icon="@android:drawable/ic_menu_agenda"
-          android:title="@string/range" />
+    <item android:id="@+id/action_change_date"
+          android:title="@string/changeDate"/>
 </menu>
