@@ -1,4 +1,4 @@
 #!/usr/bin/python
 import blinker
 
-blinker.blink(11, 5, 0.3)
+blinker.blink(11, 6, 0.1)
