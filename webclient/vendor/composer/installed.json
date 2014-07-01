@@ -819,5 +819,50 @@
             "rest",
             "web service"
         ]
+    },
+    {
+        "name": "2amigos/yii2-date-picker-widget",
+        "version": "0.1.0",
+        "version_normalized": "0.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/2amigos/yii2-date-picker-widget.git",
+            "reference": "6696ae3798a2a95b7281686d3279c4d3b50d8183"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/2amigos/yii2-date-picker-widget/zipball/6696ae3798a2a95b7281686d3279c4d3b50d8183",
+            "reference": "6696ae3798a2a95b7281686d3279c4d3b50d8183",
+            "shasum": ""
+        },
+        "require": {
+            "yiisoft/yii2": "*"
+        },
+        "time": "2014-04-03 15:47:15",
+        "type": "yii2-extension",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "dosamigos\\datepicker\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Antonio Ramirez",
+                "email": "ramirez.cobos@gmail.com",
+                "homepage": "http://2amigos.us"
+            }
+        ],
+        "description": "Bootstrap DatePicker widget for Yii2.",
+        "keywords": [
+            "datepicker",
+            "extension",
+            "widget",
+            "yii"
+        ]
     }
 ]
