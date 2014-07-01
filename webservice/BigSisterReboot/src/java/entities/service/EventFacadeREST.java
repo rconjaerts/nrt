@@ -114,7 +114,7 @@ public class EventFacadeREST extends AbstractFacade<Event> {
                 .setParameter("to", to)
                 .getResultList();
         if(eventList.size()>1)
-            return generateEmptyDataStream(eventList, typeId, to);
+            return generateEmptyDataStream(eventList, typeId, to, from);
         return eventList;
     }
     
@@ -174,9 +174,12 @@ public class EventFacadeREST extends AbstractFacade<Event> {
         return total / eventList.size();
     }
     
-    private List<Event> generateEmptyDataStream(List<Event> eventList, int typeId, int to) {
+    private List<Event> generateEmptyDataStream(List<Event> eventList, int typeId, int to, int from) {
         ArrayList<Event> addedEventList = new ArrayList<Event>();
         for(int i = 0; i < eventList.size()-1; i++) {
+            if(i == 0) {
+                addedEventList.addAll(generateEmptyDataStreamBetweenTwoEvents(eventList.get(i), new Event(-1, -1, 0, from, typeId), typeId));
+            }
             int j = i + 1;
             addedEventList.add(eventList.get(i));
             addedEventList.addAll(generateEmptyDataStreamBetweenTwoEvents(eventList.get(i), eventList.get(j), typeId));

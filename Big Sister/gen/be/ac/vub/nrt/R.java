@@ -73,14 +73,14 @@ containing a value of this type.
     public static final class id {
         public static final int action_day=0x7f070008;
         public static final int action_range=0x7f070009;
-        public static final int date=0x7f070004;
-        public static final int endDate=0x7f070007;
-        public static final int graph=0x7f070005;
+        public static final int dataFragment=0x7f070004;
+        public static final int endDate=0x7f070006;
+        public static final int graph=0x7f070007;
         public static final int imgBear=0x7f070000;
         public static final int movementVal=0x7f070002;
         public static final int noiseVal=0x7f070003;
         public static final int restVal=0x7f070001;
-        public static final int startDate=0x7f070006;
+        public static final int startDate=0x7f070005;
     }
     public static final class layout {
         public static final int datafragment=0x7f030000;
