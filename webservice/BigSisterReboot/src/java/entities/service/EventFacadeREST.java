@@ -1,10 +1,11 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Group NRT
+ * Hackiothon
  */
 package entities.service;
 
 import entities.Event;
+import entities.unpersisted.SleepComfort;
 import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -116,9 +117,44 @@ public class EventFacadeREST extends AbstractFacade<Event> {
         return generateEmptyDataStream(eventList, typeId);
     }
     
+    @GET
+    @Path("sleepcomfort/{accountId}/{from}/{to}")
+    @Produces({"application/xml", "application/json"})
+    public SleepComfort getSleepComfort(
+            @PathParam("accountId") Integer accountId,
+            @PathParam("from") Integer from, 
+            @PathParam("to") Integer to) 
+    {
+        List<Event> eventAudioList = (List<Event>) em.createNamedQuery("Event.sleepComfort")
+                .setParameter("accountId", accountId)
+                .setParameter("typeId", 1)
+                .setParameter("from", from)
+                .setParameter("to", to)
+                .getResultList();
+        
+        List<Event> eventVideoList = (List<Event>) em.createNamedQuery("Event.sleepComfort")
+                .setParameter("accountId", accountId)
+                .setParameter("typeId", 2)
+                .setParameter("from", from)
+                .setParameter("to", to)
+                .getResultList();
+        
+        return new SleepComfort(
+                calculateSleepComfort(eventAudioList), 
+                calculateSleepComfort(eventVideoList));
+    }
+    
     @Override
     protected EntityManager getEntityManager() {
         return em;
+    }
+    
+    private float calculateSleepComfort(List<Event> eventList) {
+        float total = 0;
+        for (Event event : eventList) {
+            total += event.getValue();
+        }
+        return total / eventList.size();
     }
     
     private List<Event> generateEmptyDataStream(List<Event> eventList, int typeId) {

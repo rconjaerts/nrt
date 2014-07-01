@@ -1,6 +1,6 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Group NRT
+ * Hackiothon
  */
 package entities;
 
@@ -32,6 +32,8 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Event.findByTimestamp", query = "SELECT e FROM Event e WHERE e.timestamp = :timestamp"),
     @NamedQuery(name = "Event.findByTypeId", query = "SELECT e FROM Event e WHERE e.typeId = :typeId"),
     @NamedQuery(name = "Event.historyDataByAccountFromTo", 
+        query = "SELECT e FROM Event e WHERE e.accountId = :accountId AND e.typeId = :typeId AND e.timestamp BETWEEN :from AND :to"),
+    @NamedQuery(name = "Event.sleepComfort", 
         query = "SELECT e FROM Event e WHERE e.accountId = :accountId AND e.typeId = :typeId AND e.timestamp BETWEEN :from AND :to"),
     @NamedQuery(name = "Event.liveDataByAccountAndLastTimeStamp",
         query = "SELECT e from Event e WHERE e.accountId = :accountId AND e.typeId = :typeId AND e.timestamp > :timestamp")})
