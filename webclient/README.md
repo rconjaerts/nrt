@@ -27,6 +27,13 @@ TECHNOLOGIES
 
 - Android 4.4
 
+***
+***
+DEMO
+----
+***
+***
+
 
 FUTURE
 -------
