@@ -68,7 +68,6 @@ class SiteController extends Controller
 		} else {
 			$today = \DateTime::createFromFormat('d/m/Y', $date);
 			$todayShow = $today->format('d/m/Y');
-			print_r($today);
 			$today->setTime(0,0,1);
 			$now = clone $today;
 			$now->setTime(23,59,58);
