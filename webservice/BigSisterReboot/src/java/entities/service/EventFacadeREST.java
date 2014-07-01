@@ -157,8 +157,8 @@ public class EventFacadeREST extends AbstractFacade<Event> {
         int totalVideoCount = eventVideoList.size();
         int totalAudioCount = eventAudioList.size();
         
-        float movementAmount =  (videoCount / totalVideoCount * 100);
-        float noiseAmount =  (audioCount / totalAudioCount * 100);
+        float movementAmount =  (videoCount / (totalVideoCount+1) * 100);
+        float noiseAmount =  (audioCount / (totalAudioCount+1) * 100);
         
         int videoRest = (int) (totalVideoCount - videoCount);
         int audioRest = (int) (totalAudioCount - audioCount);
