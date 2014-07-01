@@ -153,35 +153,15 @@ public class EventFacadeREST extends AbstractFacade<Event> {
                 .setParameter("from", from)
                 .setParameter("to", to)
                 .getSingleResult();
-        
-        int totalVideoCount = (int) (videoCount + generateEmptyDataStream(eventVideoList, 2, to, from).size());
-        int totalAudioCount = (int) (audioCount + generateEmptyDataStream(eventAudioList, 1, to, from).size());
-        
-        float movementAmount =  (videoCount / (totalVideoCount+1) * 100);
-        float noiseAmount =  (audioCount / (totalAudioCount+1) * 100);
-        
-        int videoRest = (int) (totalVideoCount - videoCount);
-        int audioRest = (int) (totalAudioCount - audioCount);
-        
+
         float videoValue = calculateSleepComfort(eventVideoList);
         float audioValue = calculateSleepComfort(eventAudioList);
-        
-        float movementValue = videoValue / videoRest * 100;
-        float noiseValue = audioValue / audioRest * 100;
-        
-        float sleepQualityValue = 100 - ((2 * movementAmount + 2 * noiseAmount + movementValue + noiseValue) / 4);
-        int comfortScore = (int) Math.round(sleepQualityValue / 10 + 0.5);
-        
-        if(comfortScore < 1) comfortScore = 1;
-        if(comfortScore > 10) comfortScore = 10;
-        
+
         return new SleepComfort(
                 audioValue, 
                 videoValue,
                 audioCount,
-                videoCount,
-                sleepQualityValue,
-                comfortScore);
+                videoCount);
     }
     
     @Override
