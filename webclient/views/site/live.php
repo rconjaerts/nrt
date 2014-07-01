@@ -7,14 +7,27 @@ use yii\helpers\Html;
  */
 $this->title = 'Live';
 ?>
-<div class="live">
-	<?php echo $latestTimestamp; ?>
-	<script type="text/javascript">
-		setInterval ( "checkForNewData()", 5000 );
 
-		function checkForNewData()
-		{
-		  console.log("test");
-		}
+<div class="live">
+	
+	<div id="cal">
+	</div>
+	<script type="text/javascript">
+        function refresh() {
+			var url = '<?= Yii::$app->homeUrl; ?>' + '/graph/partial'
+            console.log(url);
+	
+	        jQuery.ajax({
+	        'type': 'POST',
+	        'url': url,
+	        'data': {
+	        },
+	        'success': function(data) {
+				xdata = data[0];
+				ydata = data[1];
+	         },
+	         'cache': false
+		 });
+        }
 	</script>
 </div>

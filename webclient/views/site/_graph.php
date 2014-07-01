@@ -28,6 +28,16 @@ use yii\helpers\Html;
 
 	scaleShowLabels: true,
 	
+	scaleOverride: true,
+	
+	// Number - The number of steps in a hard coded scale
+	scaleSteps: 10,
+	// Number - The value jump in the hard coded scale
+	scaleStepWidth: 10,
+	// Number - The scale starting value
+	scaleStartValue: 0,
+	
+	
 	
     //String - Colour of the grid lines
     scaleGridLineColor : "rgba(0,0,0,.05)",
@@ -67,12 +77,16 @@ use yii\helpers\Html;
 	
 	labelTemplateString : '',
 	};
+	
+	
+	var myLineChart = null;
 		$(function() {
+			
 			var canvas = document.getElementById('mCanvas'),
 				context = canvas.getContext('2d');
 			function resizeCanvas() {
-					canvas.width = window.innerWidth;
-					canvas.height = window.innerHeight;
+					canvas.width = 1280 //window.innerWidth;
+					canvas.height = 636 //window.innerHeight;
 					drawStuff(); 
 			}
 			window.addEventListener('resize', resizeCanvas, false);
@@ -97,9 +111,52 @@ use yii\helpers\Html;
 				};
 				// Get the context of the canvas element we want to select
 				var ctx = document.getElementById("mCanvas").getContext("2d");
-				var myLineChart = new Chart(ctx).Line(data, options);
+				myLineChart = new Chart(ctx).Line(data, options);
 			}
 		});
 		
+		function drawStuffX(xdata, ydata) {
+			var data = {
+			labels: xdata,
+			datasets: [
+					{
+						label: "Video",
+						strokeColor: "rgba(<?php echo $color; ?>, 1)",
+						fillColor: "rgba(<?php echo $color; ?>, 0.7)",
+						pointColor: "rgba(220,220,220,1)",
+						pointStrokeColor: "#fff",
+						pointHighlightFill: "#fff",
+						pointHighlightStroke: "rgba(220,220,220,1)",
+						data: ydata
+					},
+				]
+			};
+			// Get the context of the canvas element we want to select
+			var canvas = document.getElementById('mCanvas'),
+				ctx = canvas.getContext('2d');
+			ctx.clearRect(0,0, canvas.width, canvas.height);
+			scale = myLineChart.scale
+			myLineChart = new Chart(ctx).Line(data, options);
+			myLineChart.scale = scale
+		}
+		
+        function refresh() {
+			/*var url = '<?= Yii::$app->homeUrl; ?>' + '/graph/partial'
+            console.log(url);
+	
+	        jQuery.ajax({
+	        'type': 'POST',
+	        'url': url,
+	        'data': {
+	        },
+	        'success': function(data) {
+				xdata = data[0];
+				ydata = data[1];
+				drawStuffX(xdata, ydata);
+	         },
+	         'cache': false
+		 });
+			*/
+        }
 	</script>	
 </div>
