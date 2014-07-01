@@ -27,7 +27,11 @@ class GraphController extends Controller
         ];
     }
 	
-	public function actionMovementPartial($date=null){
+	public function actionLive(){
+		return $this->render('/site/live', []);
+	}
+	
+	public function actionPartial($date=null){
 		if(is_null($date)){
 			$today  = mktime(0, 0, 0, date("m")  , date("d"), date("Y"));
 			$todayShow = date("d/m/Y");
@@ -57,11 +61,8 @@ class GraphController extends Controller
 		   $videoX[] = $event["timestamp"] - $firstTimestamp;;
 		}
 		
-        return $this->renderPartial('/site/_graph', [
-			'dataY' => $videoY,
-			'dataX' => $videoX,
-			'color' => '91,192,222'
-			]);
+		\Yii::$app->response->format = 'json';
+		return array($videoX, $videoY);
 	}
 	
 	public function actionMovement($date=null){
