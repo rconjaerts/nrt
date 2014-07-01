@@ -8,7 +8,7 @@ use yii\widgets\ActiveForm;
 $this->title = 'Test';
 ?>
 <div class="site-index">
-	
+	<?php echo '<img src="'.Yii::$app->homeUrl.'/../img/brotherbearlarge.jpg" alt="BrotherBear" style="height: 100%; width: 100%;"/>'; ?>
 </div>
 
 
