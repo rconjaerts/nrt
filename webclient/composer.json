@@ -20,7 +20,8 @@
 		"yiisoft/yii2-swiftmailer": "*",
 		"michelf/php-markdown": "*",
 		"michelf/php-markdown": "*",
-        "guzzlehttp/guzzle": "~4.0"
+        "guzzlehttp/guzzle": "~4.0",
+		"2amigos/yii2-date-picker-widget": "*"
 	},
 	"require-dev": {
 		"yiisoft/yii2-codeception": "*",

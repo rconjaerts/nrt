@@ -60,11 +60,24 @@ class SiteController extends Controller
         return $this->render('videolive', [
 			]);
 	}
-	public function actionData(){
-		
-		$today  = mktime(0, 0, 0, date("m")  , date("d"), date("Y"));
-		$todayShow = date("d/m/Y");
-		$now = time();
+	public function actionData($date=null){
+		if(is_null($date)){
+			$today  = mktime(0, 0, 0, date("m")  , date("d"), date("Y"));
+			$todayShow = date("d/m/Y");
+			$now = time();
+		} else {
+			$today = \DateTime::createFromFormat('d/m/Y', $date);
+			$todayShow = $today->format('d/m/Y');
+			print_r($today);
+			$today->setTime(0,0,1);
+			$now = clone $today;
+			$now->setTime(23,59,58);
+			$today = $today->getTimestamp();
+			$now = $now->getTimestamp();
+		}
+
+		//echo '<br><br><br>';
+		//echo 'http://192.168.1.116:8080/BigSisterReboot/webresources/entities.event/historydata/'.$this->accountId.'/'.$this->videoType.'/'.$today.'/'.$now;
 		
 		$client = new \GuzzleHttp\Client();
 		
@@ -106,6 +119,16 @@ class SiteController extends Controller
 		$videoX = array();
 		$audioY = array();
 		$audioX = array();
+		$dataX = array();
+		$movementAmount = 0;
+		$movementValue = 0;
+		$noiseAmount = 0;
+		$noiseValue = 0;
+		$sleepQualityValue = 0;
+		$comfortScore = 0;
+		if(count($videoData) > 0 && count($audioData) > 0){
+			
+	
 		$firstTimestamp = min($videoData[0]["timestamp"], $audioData[0]["timestamp"]);
 		foreach($videoData as $event){
 		   $videoY[] = $event["value"];
@@ -125,6 +148,19 @@ class SiteController extends Controller
 		} else {
 			$dataX = $audioX;
 		}
+		
+		$movementAmount = $videoCount / count($videoY) * 100;
+		$movementValue = $videoValue / 40 * 100;
+		$noiseAmount = $audioCount / count($audioY) * 100;
+		$noiseValue = $audioValue / 40 * 100;
+	
+		$sleepQualityValue = (400 - $movementAmount - $movementValue - $noiseAmount - $noiseValue)/4;
+		$comfortScore = round($sleepQualityValue/10 + 0.5);
+		if($comfortScore==0){
+			$comfortScore = 1;
+		}
+		
+			}
         return $this->render('data', [
 			'todayShow' => $todayShow,   
 			'dataX' => $dataX,    
@@ -138,6 +174,13 @@ class SiteController extends Controller
 			'videoCount' => $videoCount,
 			'comfortScore' => $comfortScore,
 			'sleepComfort' => $sleepComfort,
+			//
+			'movementAmount' => $movementAmount,
+			'movementValue' => $movementValue,
+			'noiseAmount' => $noiseAmount,
+			'noiseValue' => $noiseValue,
+			'sleepQualityValue' => $sleepQualityValue,
+			'comfortScore' => $comfortScore,
 			]);
 	}
 	

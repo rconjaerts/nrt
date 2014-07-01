@@ -1,29 +1,30 @@
 <?php
 use yii\helpers\Html;
 use yii\widgets\ActiveForm; 
+use dosamigos\datepicker\DatePicker;
+
 /**
  * @var yii\web\View $this
  * @var $rows
  */
 $this->title = 'Test';
 ?>
+<style>
+input {
+	border: 0;
+	font-size:63px;
+	font-weight: 500;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+}
+</style>
 <div class="site-index">	
-	<?php	
-	$movementAmount = $videoCount / count($videoY) * 100;
-	$movementValue = $videoValue / 30 * 100;
-	$noiseAmount = $audioCount / count($audioY) * 100;
-	$noiseValue = $audioValue / 30 * 100;
-	
-	$sleepQualityValue = (400 - $movementAmount - $movementValue - $noiseAmount - $noiseValue)/4;
-	$comfortScore = round($sleepQualityValue/10 + 0.5);
-	if($comfortScore==0){
-		$comfortScore = 1;
-	}
-	?>	
-	
-	<div class="jumbotron" style="padding-bottom: 0;">
-	  <h1>Overall sleeping quality for <?= $todayShow; ?></h1>
-	  <br>
+
+	<div class="jumbotron" style="padding-bottom: 0; padding-top: 0;">
+	  <h1>Overall sleeping quality for</h1>
+	  <input type="text" data-date-format="dd/mm/yyyy" value="<?= $todayShow; ?>" id="datepicker">
+	  
 	  <div class="row">
 	  <?php for($i = 1; $i <= 10; $i++){
 		  if($i==$comfortScore){
@@ -75,6 +76,8 @@ $this->title = 'Test';
 	<canvas id="audio" style="max-width: 80%"></canvas>
 	</center>
 	<script>
+
+
 	var options = {
 
     ///Boolean - Whether grid lines are shown across the chart
@@ -131,10 +134,7 @@ $this->title = 'Test';
 
 };
 		(function() {
-			/*
-			var canvas0 = document.getElementById('myChart'),
-				context0 = canvas0.getContext('2d');
-			*/
+	
 				
 			var canvas1 = document.getElementById('video'),
 				context1 = canvas1.getContext('2d');
@@ -142,15 +142,10 @@ $this->title = 'Test';
 			var canvas2 = document.getElementById('audio'),
 				context2 = canvas2.getContext('2d');	
 			
-			window.addEventListener('resize', resizeCanvas0, false);
 			window.addEventListener('resize', resizeCanvas1, false);
 			window.addEventListener('resize', resizeCanvas2, false);
 
-			function resizeCanvas0() {
-					canvas0.width = window.innerWidth;
-					canvas0.height = window.innerHeight;
-					drawStuff0(); 
-			}
+	
 			function resizeCanvas1() {
 					canvas1.width = window.innerWidth;
 					canvas1.height = window.innerHeight;
@@ -162,41 +157,10 @@ $this->title = 'Test';
 					drawStuff2(); 
 			}
 			
-			//resizeCanvas0();
 			resizeCanvas1();
 			resizeCanvas2();
 			
-			function drawStuff0() {
-				var data = {
-				labels: <?php echo '[' . implode(', ', $dataX) . ']'; ?>,
-				datasets: [
-						{
-							label: "Video",
-							strokeColor: "rgba(91,192,222, 1)",
-							fillColor: "rgba(91,192,222, 0.7)",
-							pointColor: "rgba(220,220,220,1)",
-							pointStrokeColor: "#fff",
-							pointHighlightFill: "#fff",
-							pointHighlightStroke: "rgba(91,192,222, 1)",
-							data: <?php echo '[' . implode(', ', $videoY) . ']'; ?>
-						},
-						{
-							label: "audio",
-							fillColor: "rgba(240,173,78,0.7)",
-							strokeColor: "rgba(240,173,78,,1)",
-							pointColor: "rgba(220,220,220,1)",
-							pointStrokeColor: "#fff",
-							pointHighlightFill: "#fff",
-							pointHighlightStroke: "rgba(240,173,78,,1)",
-							data: <?php echo '[' . implode(', ', $audioY) . ']'; ?>
-						}
-					]
-				};
-				// Get the context of the canvas element we want to select
-				var ctx = document.getElementById("myChart").getContext("2d");
-				var myLineChart = new Chart(ctx).Line(data, options);
-			}
-			
+		
 			function drawStuff1() {
 				var data = {
 				labels: <?php echo '[' . implode(', ', $videoX) . ']'; ?>,
@@ -239,6 +203,15 @@ $this->title = 'Test';
 				var myLineChart = new Chart(ctx).Line(data, options);
 			}
 		})();	
-	</script>
-	<?php //print_r($dataX); ?>
+		
+		$('#datepicker').datepicker(
+		).on('changeDate', function(e){
+			d = $('#datepicker').val()
+			
+			var link = window.location.href.split('?')[0];
+		    link = link + '?' + 'date=' + d;
+		    window.location.href = link;
+	     });
+		
+	</script>	
 </div>
