@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -22,10 +23,10 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.DatePicker;
 
-public class Day extends Activity{
+public class Day extends FragmentActivity{
 	int year, month, day, checkControl;
 	Button date;
-	OkHttpClient client = new OkHttpClient();
+	
 	float totalMaxValue = 0;
 	int maxXValue = 0;
 	
@@ -35,6 +36,8 @@ public class Day extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.day);
 		
+	}
+	/*
 		checkControl = 0;
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 	    StrictMode.setThreadPolicy(policy);
@@ -63,61 +66,9 @@ public class Day extends Activity{
 		}
 	}
 	
-	private void getSoundData() throws Exception {
-		Calendar cal1 = Calendar.getInstance();
-		cal1.set(year, month-1, day, 0, 0, 1);
-		
-		Calendar cal2 = Calendar.getInstance();
-		cal2.set(year, month-1, day, 23, 59, 59);
-		
-		Request request = new Request.Builder()
-			.url("http://192.168.1.116:8080/BigSisterReboot/webresources/entities.event/historydata/1/1/"+cal1.getTimeInMillis()/1000L+"/"+cal2.getTimeInMillis()/1000L)
-			.build();
-
-		Call call = client.newCall(request);
-		call.enqueue(new Callback() {
-			@Override public void onFailure(Request request, IOException e) {
-				Log.e("Whoops", e.toString());			  
-			}
-
-			@Override public void onResponse(Response response) throws IOException {
-				if (!response.isSuccessful()) {
-					throw new IOException("Unexpected code " + response);
-				}
-				createGraph(response.body().string(), 1);
-			}
-		});
-	}
 	
-	private void getVideoData() throws Exception {
-		Calendar cal1 = Calendar.getInstance();
-		cal1.set(year, month-1, day, 0, 0, 1);
-		
-		Calendar cal2 = Calendar.getInstance();
-		cal2.set(year, month-1, day, 23, 59, 59);
-		
-		Request request = new Request.Builder()
-			.url("http://192.168.1.116:8080/BigSisterReboot/webresources/entities.event/historydata/1/2/"+cal1.getTimeInMillis()/1000L+"/"+cal2.getTimeInMillis()/1000L)
-			.build();
-
-		Call call = client.newCall(request);
-		call.enqueue(new Callback() {
-			@Override public void onFailure(Request request, IOException e) {
-				Log.e("Whoops", e.toString());			  
-			}
-
-			@Override public void onResponse(Response response) throws IOException {
-				if (!response.isSuccessful()) {
-					throw new IOException("Unexpected code " + response);
-				}
-				createGraph(response.body().string(), 2);
-			}
-		});
-	}
 	
 	private void createGraph(String body, int type) {
-		Gson gson = new Gson();
-		Event[] events = gson.fromJson(body, Event[].class);
 		if(events.length != 0)
 			addLinePointsFromArray(events, type);
 	}
@@ -218,5 +169,5 @@ public class Day extends Activity{
 				e.printStackTrace();
 			}
 	    }
-	};
+	};*/
 }
